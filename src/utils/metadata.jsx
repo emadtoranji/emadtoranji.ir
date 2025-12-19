@@ -8,6 +8,8 @@ const site = {
   twitter: '@emadtoranji',
 };
 
+const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_CLEAR_CACHE_VERSION;
+
 const buildUrl = (path = '') => `${site.domain}${path}`;
 
 const extractPageName = (params, forcedPage) => {
@@ -23,8 +25,8 @@ const extractPageName = (params, forcedPage) => {
 };
 
 const imageBySize = (size) => {
-  if (!size) return `images/app-logo.webp`;
-  return `images/icons/${size}/app-logo.webp`;
+  if (!size) return `images/app-logo.webp${CLEAR_CACHE_VERSION}`;
+  return `images/icons/${size}/app-logo.webp${CLEAR_CACHE_VERSION}`;
 };
 
 const merge = (page = {}, general = {}) => ({
@@ -84,7 +86,7 @@ export async function generateMetadata(
     category: meta.category,
 
     themeColor: site.themeColor,
-    manifest: `/${currentLang}/manifest.json`,
+    manifest: `/${currentLang}/manifest.json${CLEAR_CACHE_VERSION}`,
 
     alternates: {
       canonical,
