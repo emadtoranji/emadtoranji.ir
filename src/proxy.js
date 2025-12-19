@@ -44,14 +44,14 @@ export async function proxy(req) {
   const nonce = crypto.randomBytes(16).toString('base64');
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-inline' http://*.google.com https://*.google.com http://*.gstatic.com https://*.gstatic.com`,
+    `script-src 'self' 'unsafe-inline' https://*.google.com https://*.gstatic.com https://*.cloudflareinsights.com`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' http://*.w3.org https://*.w3.org data:",
-    "connect-src 'self' http://*.google.com https://*.google.com data:",
+    "connect-src 'self' https://*.google.com data:",
     "font-src 'self'",
     "object-src 'none'",
     "base-uri 'self'",
-    'frame-src http://*.google.com https://*.google.com data:',
+    'frame-src https://*.google.com data:',
     "form-action 'self'",
     "frame-ancestors 'none'",
     'upgrade-insecure-requests',
