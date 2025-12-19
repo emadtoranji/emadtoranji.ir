@@ -8,7 +8,7 @@ const site = {
   twitter: '@emadtoranji',
 };
 
-const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_CLEAR_CACHE_VERSION;
+const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_PUBLIC_CLEAR_CACHE_VERSION;
 
 const buildUrl = (path = '') => `${site.domain}${path}`;
 

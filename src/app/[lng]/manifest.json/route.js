@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 
 export const dynamic = 'force-static';
 
-const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_CLEAR_CACHE_VERSION;
+const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_PUBLIC_CLEAR_CACHE_VERSION;
 
 export async function GET(request, { params }) {
   const { lng } = (await params) || { lng: null };
