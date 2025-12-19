@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import acceptLanguage from 'accept-language';
+import crypto from 'crypto';
 import { fallbackLng, languages, cookieName, headerName } from '@i18n/settings';
 
 acceptLanguage.languages(languages);
@@ -39,6 +40,24 @@ export async function proxy(req) {
 
   const headers = new Headers(req.headers);
   headers.set(headerName, firstSegment);
+
+  const nonce = crypto.randomBytes(16).toString('base64');
+  const csp = [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}' https://www.google.com`,
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self'",
+    "connect-src 'self'",
+    "font-src 'self'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    'upgrade-insecure-requests',
+  ].join('; ');
+
+  headers.set('Content-Security-Policy', csp);
+  headers.set('x-nonce', nonce);
 
   if (req.headers.has('referer')) {
     const refererUrl = new URL(req.headers.get('referer'));
