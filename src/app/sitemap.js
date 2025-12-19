@@ -64,7 +64,8 @@ async function getAllStaticRoutes() {
 }
 
 function fixSlashes(text) {
-  return text.replace(/\/+/g, '/');
+  const fixed = text.replace(/\/+/g, '/');
+  return fixed !== '/' ? fixed.replace(/\/$/, '') : '/';
 }
 
 export default async function sitemap() {
@@ -77,10 +78,14 @@ export default async function sitemap() {
     changeFrequency = 'weekly',
     priority = 0.8,
   }) {
-    const cleanPath = path.startsWith('/') ? path : `/${path}`;
     const base = BaseUrlAddress.endsWith('/')
       ? BaseUrlAddress.slice(0, -1)
       : BaseUrlAddress;
+
+    const isRoot = path === '/' || path === '';
+    const cleanPath = isRoot
+      ? ''
+      : fixSlashes(path.startsWith('/') ? path : `/${path}`);
 
     const alternates = { languages: {} };
     for (const lng of languages) {
