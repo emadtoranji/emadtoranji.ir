@@ -6,7 +6,8 @@ acceptLanguage.languages(languages);
 
 export const config = {
   matcher: [
-    // This rule applies the middleware to every route EXCEPT the listed static folders or files
+    // All routes enter middleware EXCEPT these listed paths and files
+    // These paths are loaded directly and do NOT go through proxy
     '/((?!_next/static|_next/image|assets|styles|images|fonts|manifest.json|sitemap.xml|robots.txt|favicon.ico|sw.js).*)',
   ],
 };

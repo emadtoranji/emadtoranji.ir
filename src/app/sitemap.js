@@ -12,7 +12,7 @@ const DYNAMIC_ROUTES = [
   },
 ];
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-static';
 
 const appDir = path.join(process.cwd(), 'src', 'app');
 

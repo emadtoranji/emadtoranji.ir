@@ -3,6 +3,8 @@ export const generateMetadata = (props) =>
     m.generateMetadata(props, 'not-found', false, false)
   );
 
+export const dynamic = 'force-static';
+
 export default function NotFoundLayout({ children }) {
   return children;
 }

@@ -20,6 +20,11 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
+          // {
+          //   key: 'Content-Security-Policy',
+          //   value:
+          //     "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline';",
+          // },
           { key: 'Cross-Origin-Resource-Policy', value: 'same-origin' },
           { key: 'X-XSS-Protection', value: '1; mode=block' },
         ],
