@@ -1,0 +1,141 @@
+{
+  "general": {
+    "siteName": "عماد ترنجی",
+    "siteFullName": "رزومه عماد ترنجی"
+  },
+  "home": {
+    "header-title": "عماد ترنجی",
+    "personal-details-title": "جزئیات شخصی",
+    "personal-items": [
+      {
+        "label": "نام",
+        "logo": "bi-person-fill color-personal-logo",
+        "value": "عماد ترنجی"
+      },
+      {
+        "label": "ایمیل",
+        "logo": "bi-envelope-fill color-personal-logo",
+        "value": "emadtoranji6@gmail.com",
+        "href": "mailto:emadtoranji6@gmail.com"
+      },
+      {
+        "label": "شماره تماس",
+        "logo": "bi-phone-fill color-personal-logo",
+        "value": "۹۸-۹۱۲-۶۴۹-۷۵۰۱",
+        "href": "tel:989126497501"
+      },
+      {
+        "label": "آدرس",
+        "logo": "bi-geo-alt-fill color-personal-logo",
+        "value": "ایران، تهران"
+      }
+    ],
+    "social-items": [
+      {
+        "logo": "bi-telegram text-primary",
+        "href": "https://t.me/emadtoranji"
+      },
+      {
+        "logo": "bi-whatsapp text-success",
+        "href": "https://wa.me/989126497501"
+      },
+      {
+        "logo": "bi-github text-black",
+        "href": "https://github.com/emadtoranji"
+      },
+      {
+        "logo": "bi-twitter-x text-black",
+        "href": "https://x.com/emadtoranji"
+      }
+    ],
+    "summary-title": "خلاصه",
+    "summary-text": "من توسعه‌دهنده فول‌استک با بیش از {{experienceYears}} سال تجربه در طراحی و پیاده‌سازی وب‌اپلیکیشن‌های مدرن و مقیاس‌پذیر هستم. حوزه تخصصی من شامل طراحی وب‌سایت‌ها، وب‌اپلیکیشن‌ها، وب‌سرویس‌ها و ربات‌های تلگرامی است. تمرکز من بر ایجاد سیستم‌های امن، سریع و کاربرپسند می‌باشد. تجربه گسترده در پروژه‌های فریلنسری و همکاری تیمی دارم و همواره با هدف ارائه راه‌حل‌های خلاقانه و بهبود مستمر تجربه کاربری فعالیت می‌کنم.",
+    "skills-title": "مهارت‌ها",
+    "skills-items": [
+      {
+        "title": "توسعه وب فرانت",
+        "values": [
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Bootstrap",
+          "React",
+          "Next.js",
+          "JavaScript",
+          "JQuery"
+        ]
+      },
+      {
+        "title": "توسعه بک اند",
+        "values": [
+          "Python",
+          "PHP",
+          "Node.js",
+          "REST APIs",
+          "JSON",
+          "Authentication & Authorization",
+          "Server-side Rendering (SSR)",
+          "WebSocket"
+        ]
+      },
+      {
+        "title": "پایگاه داده",
+        "values": ["MySQL", "MongoDB", "Database Design & Normalization"]
+      },
+      {
+        "title": "ابزارها",
+        "values": [
+          "Git / GitHub / GitLab",
+          "Docker",
+          "NPM / Yarn",
+          "VS Code",
+          "Webpack / Vite",
+          "Postman",
+          "Linux / Command Line"
+        ]
+      }
+    ],
+    "experience-title": "تجربه حرفه‌ای",
+    "experience-role": "توسعه‌دهنده فول‌استک",
+    "experience-description": "توسعه‌دهنده فول‌استک (مهر ۱۳۹۷ – تاکنون)",
+    "experience-items": [
+      "طراحی و پیاده‌سازی رابط‌های کاربری پویا و رسپانسیو",
+      "توسعه سیستم‌های بک‌اند امن و مقیاس‌پذیر با Node.js و PHP",
+      "پیاده‌سازی APIهای امن برای یکپارچه‌سازی سیستم‌ها و بهبود تعاملات بین سرویس‌ها",
+      "ساخت ربات‌های تلگرامی با قابلیت‌های تعاملی و طراحی مدرن برای خودکارسازی فرآیندها",
+      "بهینه‌سازی عملکرد وب‌سایت‌ها با کاهش زمان بارگذاری تا ۳۰٪",
+      "تحلیل نیازهای مشتریان و ارائه راه‌حل‌های سفارشی",
+      "طراحی داشبوردهای مدیریتی با تمرکز بر تجربه کاربری"
+    ],
+    "portfolio-title": "نمونه کارها",
+    "portfolio-items": [
+      {
+        "title": "پلتفرم معاملات فارکس",
+        "url": "https://t.me/TonForexFunds_Bot",
+        "description": "وب‌اپلیکیشن ریسپانسیو در قالب مینی‌اپ تلگرام با پیاده‌سازی احراز هویت کاربران، مدیریت اشتراک، اتصال به وب‌سرویس‌ و انجام معاملات فارکس از طریق زیرساخت سرور اختصاصی."
+      },
+      {
+        "title": "پلتفرم ارائه خدمات وب‌سرویس",
+        "url": "https://apidevelopers.ir",
+        "description": "وب‌سایت ریسپانسیو برای ارائه و مدیریت وب‌سرویس‌ها، شامل ثبت‌نام کاربران، مدیریت موجودی حساب، دسترسی به APIها و کنترل مصرف سرویس‌ها."
+      },
+      {
+        "title": "صرافی ارز دیجیتال",
+        "url": "https://t.me/Bitnorbot",
+        "description": "وب‌اپلیکیشن ریسپانسیو در قالب مینی‌اپ تلگرام با قابلیت احراز هویت کاربران، واریز و برداشت ارز دیجیتال، تبدیل رمزارزها و نمایش نمای بازار به‌صورت لحظه‌ای."
+      },
+      {
+        "title": "وب‌سایت شرکتی",
+        "url": "https://aratice.com",
+        "description": "طراحی و پیاده‌سازی وب‌سایت شرکتی با تمرکز بر هویت برند، تجربه کاربری روان و بهینه‌سازی عملکرد، مناسب برای معرفی خدمات و افزایش تعامل کاربران."
+      },
+      {
+        "title": "سیستم ثبت و مدیریت آگهی پروژه",
+        "url": "https://t.me/Prajects_bot",
+        "description": "ربات تلگرامی پیشرفته برای مدیریت کامل آگهی‌های پروژه، شامل خرید اشتراک‌های ماهانه، ثبت و بررسی خودکار آگهی‌ها، پرداخت آنلاین، انتشار در کانال‌ها، پنل مدیریت و ارسال پیام همگانی."
+      }
+    ],
+    "education-title": "تحصیلات",
+    "education-items": ["کاردانی مهندسی کامپیوتر | دانشگاه هرمزگان | ۱۴۰۱"]
+  }
+}

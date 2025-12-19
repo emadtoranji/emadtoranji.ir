@@ -1,0 +1,143 @@
+{
+  "general": {
+    "siteName": "Emad Toranji",
+    "siteFullName": "Emad Toranji Resume"
+  },
+  "home": {
+    "header-title": "Emad Toranji",
+    "personal-details-title": "Personal Details",
+    "personal-items": [
+      {
+        "label": "Name",
+        "logo": "bi-person-fill color-personal-logo",
+        "value": "Emad Toranji"
+      },
+      {
+        "label": "Email",
+        "logo": "bi-envelope-fill color-personal-logo",
+        "value": "emadtoranji6@gmail.com",
+        "href": "mailto:emadtoranji6@gmail.com"
+      },
+      {
+        "label": "Contact Number",
+        "logo": "bi-phone-fill color-personal-logo",
+        "value": "98-912-649-7501",
+        "href": "tel:989126497501"
+      },
+      {
+        "label": "Address",
+        "logo": "bi-geo-alt-fill color-personal-logo",
+        "value": "Iran, Tehran"
+      }
+    ],
+    "social-items": [
+      {
+        "logo": "bi-telegram text-primary",
+        "href": "https://t.me/emadtoranji"
+      },
+      {
+        "logo": "bi-whatsapp text-success",
+        "href": "https://wa.me/989126497501"
+      },
+      {
+        "logo": "bi-github text-black",
+        "href": "https://github.com/emadtoranji"
+      },
+      {
+        "logo": "bi-twitter-x text-black",
+        "href": "https://x.com/emadtoranji"
+      }
+    ],
+    "summary-title": "Summary",
+    "summary-text": "I am a full-stack developer with over {{experienceYears}} years of experience in designing and implementing modern, scalable web applications. My areas of expertise include designing websites, web applications, web services, and Telegram bots. My focus is on creating secure, fast, and user-friendly systems. I have extensive experience in freelance projects and team collaboration, and I always aim to provide creative solutions and continuously improve the user experience.",
+    "skills-title": "Skills",
+    "skills-items": [
+      {
+        "title": "Front-end Web Development",
+        "values": [
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Bootstrap",
+          "React",
+          "Next.js",
+          "JavaScript",
+          "JQuery"
+        ]
+      },
+      {
+        "title": "Back-end Development",
+        "values": [
+          "Python",
+          "PHP",
+          "Node.js",
+          "REST APIs",
+          "JSON",
+          "Authentication & Authorization",
+          "Server-side Rendering (SSR)",
+          "WebSocket"
+        ]
+      },
+      {
+        "title": "Database",
+        "values": ["MySQL", "MongoDB", "Database Design & Normalization"]
+      },
+      {
+        "title": "Tools",
+        "values": [
+          "Git / GitHub / GitLab",
+          "Docker",
+          "NPM / Yarn",
+          "VS Code",
+          "Webpack / Vite",
+          "Postman",
+          "Linux / Command Line"
+        ]
+      }
+    ],
+    "experience-title": "Professional Experience",
+    "experience-role": "Full-stack Developer",
+    "experience-description": "Full-stack Developer (October 2018 – present)",
+    "experience-items": [
+      "Design and implement dynamic and responsive user interfaces",
+      "Develop secure and scalable backend systems with Node.js and PHP",
+      "Implement secure APIs for system integration and improve interactions between services",
+      "Build bots Telegram with interactive capabilities and modern design to automate processes",
+      "Optimizing website performance by reducing loading time by up to 30%",
+      "Analyzing customer needs and providing customized solutions",
+      "Designing management dashboards with a focus on user experience"
+    ],
+    "portfolio-title": "Portfolio",
+    "portfolio-items": [
+      {
+        "title": "Forex trading platform",
+        "url": "https://t.me/TonForexFunds_Bot",
+        "description": "Responsive web application in the form of a Telegram mini-app with implementation of user authentication, subscription management, connection to web service and forex trading via dedicated server infrastructure."
+      },
+      {
+        "title": "Web Service Platform",
+        "url": "https://apidevelopers.ir",
+        "description": "Responsive website for providing and managing web services, including user registration, account balance management, access to APIs, and service consumption control."
+      },
+      {
+        "title": "Digital Currency Exchange",
+        "url": "https://t.me/Bitnorbot",
+        "description": "Responsive web application in the form of a Telegram mini-app with the ability to authenticate users, deposit and withdraw digital currency, convert cryptocurrencies, and display the market view in real time."
+      },
+      {
+        "title": "Corporate Website",
+        "url": "https://aratice.com",
+        "description": "Design and implementation of a corporate website with a focus on brand identity, smooth user experience, and performance optimization, suitable for introducing services and increasing user interaction."
+      },
+      {
+        "title": "Project Ad Registration and Management System",
+        "url": "https://t.me/Prajects_bot",
+        "description": "Advanced Telegram bot for complete project ad management, including purchasing monthly subscriptions, automatic ad registration and review, online payment, publishing on channels, admin panel, and sending public messages."
+      }
+    ],
+    "education-title": "Education",
+    "education-items": [
+      "Associate of Computer Engineering | Hormozgan University | 2022"
+    ]
+  }
+}

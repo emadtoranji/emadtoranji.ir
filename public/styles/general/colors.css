@@ -1,0 +1,44 @@
+:root {
+  --color-one: #f8f9fa;
+  --color-two: #212529;
+  --color-three: #facc15;
+  --color-four: #1e3a8a;
+  --color-five: #e8edfb;
+
+  --main-bg: var(--color-five);
+  --main-color: var(--color-two);
+}
+
+html,
+body,
+main {
+  background-color: var(--main-bg);
+  color: var(--main-color);
+}
+
+.color-personal-logo {
+  color: var(--color-four);
+}
+
+.header {
+  background: var(--color-four);
+  color: var(--color-three);
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+}
+
+.section-title {
+  color: var(--color-two);
+}
+
+.section-title {
+  border-bottom: 2px solid var(--color-three);
+}
+
+.line-range::after {
+  background: var(--color-four);
+}
+
+.line-seperator-range::after {
+  background: var(--color-two);
+  opacity: 0.2;
+}

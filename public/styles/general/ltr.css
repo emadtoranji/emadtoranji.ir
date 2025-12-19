@@ -1,0 +1,9 @@
+html .theme-ltr,
+body .theme-ltr {
+  font-family: var(--font-roboto), 'Times New Roman', 'sans-serif' !important;
+  direction: ltr;
+}
+
+.line-range::after {
+  left: 0;
+}

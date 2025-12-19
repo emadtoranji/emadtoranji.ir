@@ -1,0 +1,82 @@
+html,
+body {
+  scroll-behavior: smooth;
+  line-height: 1.8 !important;
+  user-select: none !important;
+}
+
+.dir-ltr {
+  direction: ltr !important;
+}
+
+.dir-rtl {
+  direction: rtl !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.bolder-on-hover:hover {
+  font-weight: bolder !important;
+}
+
+.transform-up-on-hover:hover {
+  transform: translateY(-3px) !important;
+}
+
+.contact-item {
+  transition: color 0.3s;
+}
+
+.line-seperator-range:not(:last-child)::after,
+.line-range::after {
+  content: '';
+  position: absolute;
+  width: 10%;
+  height: 2px;
+  bottom: -2px;
+  transition: width 0.3s;
+}
+
+.line-seperator-range:not(:last-child)::after {
+  width: 100%;
+  height: 0.5px;
+}
+
+.line-range:hover::after {
+  width: 20%;
+}
+
+.animation-pulse-hover:hover {
+  display: inline-block;
+  animation: pulse;
+  animation-duration: 2s;
+  font-weight: 500;
+}
+
+.animation-fade-in {
+  animation: 0.5s ease-in-out fadeInScale;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+  }
+}

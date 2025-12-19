@@ -1,0 +1,39 @@
+{
+  "general": {
+    "title": "{{siteName}}",
+    "description": "توسعه‌دهنده فول‌استک از سال ۱۳۹۷، متخصص در ساخت وب‌اپلیکیشن‌های مدرن، امن و کاربرپسند با تمرکز بر عملکرد و تجربه عالی کاربران.",
+    "keywords": [
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+      "React",
+      "Next.js",
+      "JavaScript",
+      "JQuery",
+      "Wordpress",
+      "Python",
+      "PHP",
+      "Node.js",
+      "REST APIs",
+      "JSON",
+      "Authentication & Authorization (JWT, OAuth, Sessions)",
+      "Server-side Rendering (SSR)",
+      "WebSocket",
+      "MySQL",
+      "MongoDB",
+      "Database Design & Normalization",
+      "Git / GitHub / GitLab",
+      "Docker",
+      "NPM / Yarn",
+      "VS Code",
+      "Webpack / Vite",
+      "Postman",
+      "Linux / Command Line"
+    ]
+  },
+
+  "not-found": {
+    "title": "404 - {{siteName}}"
+  }
+}
