@@ -33,7 +33,7 @@ export async function proxy(req) {
 
   if (!languages.includes(firstSegment)) {
     const newPath = `/${fallbackLng}`;
-    return NextResponse.redirect(new URL(newPath, req.url));
+    return NextResponse.redirect(new URL(newPath, req.url), { status: 301 });
   }
 
   const headers = new Headers(req.headers);
