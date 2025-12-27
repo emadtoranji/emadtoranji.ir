@@ -1,6 +1,6 @@
 import BaseUrlAddress from '@utils/BaseUrlAddress';
 
-export const revalidate = 3600 * 24 * 30; // 30 days
+const disallow = ['/api/'];
 
 export default function robots() {
   return {
@@ -32,6 +32,6 @@ export default function robots() {
         disallow: disallow,
       },
     ],
-    sitemap: `${BaseUrlAddress}/sitemap.xml`,
+    sitemap: `${BaseUrlAddress}sitemap.xml`,
   };
 }
