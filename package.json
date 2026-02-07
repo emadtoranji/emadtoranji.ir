@@ -20,7 +20,7 @@
     "next": "16.1.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-i18next": "16.5.1",
+    "react-i18next": "16.5.3",
     "validator": "13.15.26"
   },
   "devDependencies": {
