@@ -120,6 +120,11 @@
         "description": "Responsive website for providing and managing web services, including user registration, account balance management, access to APIs, and service consumption control."
       },
       {
+        "title": "Digital Menu Platform",
+        "url": "https://menugard.ir",
+        "description": "Design and development of a comprehensive platform for digitizing and managing store menus with a special focus on restaurants, cafes, fast food and food businesses. This system has been implemented with the aim of eliminating paper menus, improving customer experience and simplifying the content management process for business owners."
+      },
+      {
         "title": "Digital Currency Exchange",
         "url": "https://t.me/Bitnorbot",
         "description": "Responsive web application in the form of a Telegram mini-app with the ability to authenticate users, deposit and withdraw digital currency, convert cryptocurrencies, and display the market view in real time."
