@@ -9,7 +9,7 @@
 I, **Emad Toranji**, am a full-stack developer with extensive experience in building modern web applications. I have expertise in the following areas:
 
 - **Frontend Development:** Next.js, React, Tailwind CSS, Bootstrap  
-- **Backend Development:** Node.js, PHP, Python  
+- **Backend Development:** Node.js, PHP
 - **Progressive Web Apps (PWA):** manifest.json, service worker implementation  
 - **SEO & Social Media Optimization:** meta tags, Open Graph, Twitter Cards  
 - **Internationalization (i18n):** supporting multi-language content  
