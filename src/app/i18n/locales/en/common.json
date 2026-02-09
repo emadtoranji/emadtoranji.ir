@@ -108,7 +108,7 @@
     "portfolio-title": "Portfolio",
     "portfolio-items": [
       {
-        "title": "Forex trading platform",
+        "title": "Forex Trading Platform",
         "url": "https://t.me/TonForexFunds_Bot",
         "description": "A responsive web application built as a Telegram mini-app, featuring user authentication, subscription management, and secure integration with web services. Supports Forex trading through a dedicated server infrastructure with a focus on security, stability, and high performance."
       },
