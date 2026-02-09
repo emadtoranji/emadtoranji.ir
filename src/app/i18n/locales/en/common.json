@@ -36,8 +36,8 @@
         "href": "https://t.me/emadtoranji"
       },
       {
-        "logo": "bi-whatsapp text-success",
-        "href": "https://wa.me/989126497501"
+        "logo": "bi-linkedin text-primary",
+        "href": "https://www.linkedin.com/in/emadtoranji"
       },
       {
         "logo": "bi-github text-black",
@@ -68,7 +68,6 @@
       {
         "title": "Back-end Development",
         "values": [
-          "Python",
           "PHP",
           "Node.js",
           "REST APIs",
@@ -80,13 +79,12 @@
       },
       {
         "title": "Database",
-        "values": ["MySQL", "MongoDB", "Database Design & Normalization"]
+        "values": ["MySQL", "PostgreSQL", "Database Design & Normalization"]
       },
       {
         "title": "Tools",
         "values": [
           "Git / GitHub / GitLab",
-          "Docker",
           "NPM / Yarn",
           "VS Code",
           "Webpack / Vite",
@@ -103,7 +101,7 @@
       "Develop secure and scalable backend systems with Node.js and PHP",
       "Implement secure APIs for system integration and improve interactions between services",
       "Build bots Telegram with interactive capabilities and modern design to automate processes",
-      "Optimizing website performance by reducing loading time by up to 30%",
+      "Optimizing website performance by reducing loading time",
       "Analyzing customer needs and providing customized solutions",
       "Designing management dashboards with a focus on user experience"
     ],
@@ -112,12 +110,12 @@
       {
         "title": "Forex trading platform",
         "url": "https://t.me/TonForexFunds_Bot",
-        "description": "Responsive web application in the form of a Telegram mini-app with implementation of user authentication, subscription management, connection to web service and forex trading via dedicated server infrastructure."
+        "description": "A responsive web application built as a Telegram mini-app, featuring user authentication, subscription management, and secure integration with web services. Supports Forex trading through a dedicated server infrastructure with a focus on security, stability, and high performance."
       },
       {
         "title": "Web Service Platform",
         "url": "https://apidevelopers.ir",
-        "description": "Responsive website for providing and managing web services, including user registration, account balance management, access to APIs, and service consumption control."
+        "description": "A responsive platform for providing and managing web services (APIs) for developers and businesses. Enables user registration, account balance management, secure API access, and service usage control. Built with a scalable architecture focused on security, transparent usage monitoring, and smooth user experience."
       },
       {
         "title": "Digital Menu Platform",
