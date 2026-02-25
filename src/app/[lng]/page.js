@@ -29,7 +29,9 @@ const SocialLink = ({ href, icon }) => (
   </div>
 );
 
-const ListItem = ({ children }) => <li className='mb-2'>{children}</li>;
+const ListItem = ({ children }) => (
+  <li className='mb-2 user-select-all'>{children}</li>
+);
 
 function ListItems({ section, item }) {
   let type;
@@ -60,16 +62,23 @@ function ListItems({ section, item }) {
       </div>
       <div
         style={type === 'array' ? { direction: 'ltr', textAlign: 'left' } : {}}
+        className='d-flex flex-wrap'
       >
         {type == 'string' ? (
-          <div className='text-justify mx-1'>{item.description}</div>
+          <div className='text-justify mx-1 user-select-all'>
+            {item.description}
+          </div>
         ) : (
           item.values.map((i, index) => {
             return (
-              <span key={index} role='button'>
-                <span className='animation-pulse-hover'>{i}</span>
+              <div
+                key={index}
+                role='button'
+                className='transform-up-on-hover user-select-all'
+              >
+                <span className=''>{i}</span>
                 {index < count - 1 ? <span className='me-1'>,</span> : ''}
-              </span>
+              </div>
             );
           })
         )}
@@ -120,7 +129,7 @@ export default async function Index({ params }) {
                             <a
                               href={item?.href}
                               target='_blank'
-                              rel='noopener noreferrer '
+                              rel='noopener noreferrer'
                             >
                               {finalVal}
                             </a>
@@ -129,7 +138,7 @@ export default async function Index({ params }) {
                           )}
                         </ContactItem>
                       );
-                    }
+                    },
                   )}
                 </div>
 
@@ -141,7 +150,7 @@ export default async function Index({ params }) {
                         href={item.href}
                         icon={item?.logo}
                       />
-                    )
+                    ),
                   )}
                 </div>
               </SectionCard>
@@ -152,7 +161,7 @@ export default async function Index({ params }) {
             <div className='d-flex flex-column gap-4'>
               <SectionCard id='summary' title={t('home.summary-title')}>
                 <p
-                  className='text-justify'
+                  className='text-justify user-select-all'
                   dangerouslySetInnerHTML={{
                     __html: t('home.summary-text', {
                       experienceYears:
@@ -172,13 +181,13 @@ export default async function Index({ params }) {
                       section='skills'
                       item={item}
                     />
-                  )
+                  ),
                 )}
               </SectionCard>
 
               <SectionCard id='experience' title={t('home.experience-title')}>
                 <p>
-                  <strong className=''>
+                  <strong className='user-select-all'>
                     {t('home.experience-description')}
                   </strong>
                 </p>
@@ -186,7 +195,7 @@ export default async function Index({ params }) {
                   {t('home.experience-items', { returnObjects: true }).map(
                     (item, index) => (
                       <ListItem key={`experience-${index}`}>{item}</ListItem>
-                    )
+                    ),
                   )}
                 </ul>
               </SectionCard>
@@ -195,7 +204,7 @@ export default async function Index({ params }) {
                 {t('home.portfolio-items', { returnObjects: true }).map(
                   (item, index) => (
                     <ListItems key={`portfolio-${index}`} item={item} />
-                  )
+                  ),
                 )}
               </SectionCard>
 
@@ -204,7 +213,7 @@ export default async function Index({ params }) {
                   {t('home.education-items', { returnObjects: true }).map(
                     (item, index) => (
                       <ListItem key={`education-${index}`}>{item}</ListItem>
-                    )
+                    ),
                   )}
                 </ul>
               </SectionCard>

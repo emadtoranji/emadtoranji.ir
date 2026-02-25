@@ -1,7 +1,7 @@
 {
   "general": {
     "siteName": "Emad Toranji",
-    "siteFullName": "Emad Toranji Resume"
+    "siteFullName": "Emad Toranji Resume | Full-Stack Web Developer"
   },
   "home": {
     "header-title": "Emad Toranji",
@@ -37,7 +37,7 @@
       },
       {
         "logo": "bi-linkedin text-primary",
-        "href": "https://www.linkedin.com/in/emadtoranji"
+        "href": "https://www.linkedin.com/in/emadtoranji/?locale=en-US"
       },
       {
         "logo": "bi-github text-black",
@@ -49,7 +49,7 @@
       }
     ],
     "summary-title": "Summary",
-    "summary-text": "I am a full-stack developer with over {{experienceYears}} years of experience in designing and implementing modern, scalable web applications. My areas of expertise include designing websites, web applications, web services, and Telegram bots. My focus is on creating secure, fast, and user-friendly systems. I have extensive experience in freelance projects and team collaboration, and I always aim to provide creative solutions and continuously improve the user experience.",
+    "summary-text": "I am a Full-Stack Web Developer with over {{experienceYears}} years of experience in designing and implementing modern, scalable web applications. My areas of expertise include designing websites, web applications, web services, and Telegram bots. My focus is on creating secure, fast, and user-friendly systems. I have extensive experience in freelance projects and team collaboration, and I always aim to provide creative solutions and continuously improve the user experience.",
     "skills-title": "Skills",
     "skills-items": [
       {
@@ -57,11 +57,12 @@
         "values": [
           "HTML5",
           "CSS3",
+          "JavaScript",
+          "TypeScript",
           "Tailwind CSS",
           "Bootstrap",
           "React",
           "Next.js",
-          "JavaScript",
           "JQuery"
         ]
       },
@@ -94,8 +95,8 @@
       }
     ],
     "experience-title": "Professional Experience",
-    "experience-role": "Full-stack Developer",
-    "experience-description": "Full-stack Developer (October 2018 – present)",
+    "experience-role": "Full-Stack Web Developer",
+    "experience-description": "Full-Stack Developer (October 2018 – present)",
     "experience-items": [
       "Design and implement dynamic and responsive user interfaces",
       "Develop secure and scalable backend systems with Node.js and PHP",

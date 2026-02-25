@@ -2,6 +2,10 @@ html,
 body {
   scroll-behavior: smooth;
   line-height: 1.8 !important;
+  user-select: none;
+}
+
+.user-select-all {
   user-select: none !important;
 }
 
@@ -25,9 +29,11 @@ a {
 .bolder-on-hover:hover {
   font-weight: bolder !important;
 }
-
+.transform-up-on-hover {
+  transition: transform 0.2s ease !important;
+}
 .transform-up-on-hover:hover {
-  transform: translateY(-3px) !important;
+  transform: translateY(-4px) !important;
 }
 
 .contact-item {
@@ -53,12 +59,12 @@ a {
   width: 20%;
 }
 
-.animation-pulse-hover:hover {
+/* .animation-pulse-hover:hover {
   display: inline-block;
   animation: pulse;
   animation-duration: 2s;
   font-weight: 500;
-}
+} */
 
 .animation-fade-in {
   animation: 0.5s ease-in-out fadeInScale;
