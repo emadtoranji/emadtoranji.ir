@@ -1,7 +1,4 @@
 import '@styles/general/globals.css';
-import '@styles/general/colors.css';
-import '@styles/general/rtl.css';
-import '@styles/general/ltr.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'animate.css';

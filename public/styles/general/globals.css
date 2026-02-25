@@ -1,3 +1,7 @@
+@import './rtl.css';
+@import './ltr.css';
+@import './colors.css';
+
 html,
 body {
   scroll-behavior: smooth;
