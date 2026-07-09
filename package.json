@@ -8,7 +8,6 @@
     "start": "next start --port 4302",
     "update": "npx npm-check-updates -u",
     "prettier": "npx prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
-    "push-dev-to-main": "git checkout main && git reset --hard dev && git push apidevelopers.ir main --force && git checkout dev",
     "lint": "eslint"
   },
   "dependencies": {
