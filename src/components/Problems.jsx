@@ -1,11 +1,7 @@
 import { fallbackLng } from '@i18n/settings';
 import Link from 'next/link';
 
-export default function Problem({
-  content,
-  code = 404,
-  currentLang = fallbackLng,
-}) {
+export default function Problem({ content, code = 404, currentLang = fallbackLng }) {
   return (
     <>
       <div className='d-flex align-items-center vh-100 py-5'>

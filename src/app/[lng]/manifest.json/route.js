@@ -31,34 +31,22 @@ export async function GET(request, { params }) {
     theme_color: '#212529',
     icons: [
       {
-        src:
-          BaseUrlAddress +
-          'images/icons/16/app-logo.webp' +
-          CLEAR_CACHE_VERSION,
+        src: BaseUrlAddress + 'images/icons/16/app-logo.webp' + CLEAR_CACHE_VERSION,
         sizes: '16x16',
         type: 'image/webp',
       },
       {
-        src:
-          BaseUrlAddress +
-          'images/icons/32/app-logo.webp' +
-          CLEAR_CACHE_VERSION,
+        src: BaseUrlAddress + 'images/icons/32/app-logo.webp' + CLEAR_CACHE_VERSION,
         sizes: '32x32',
         type: 'image/webp',
       },
       {
-        src:
-          BaseUrlAddress +
-          'images/icons/180/app-logo.webp' +
-          CLEAR_CACHE_VERSION,
+        src: BaseUrlAddress + 'images/icons/180/app-logo.webp' + CLEAR_CACHE_VERSION,
         sizes: '180x180',
         type: 'image/webp',
       },
       {
-        src:
-          BaseUrlAddress +
-          'images/icons/512/app-logo.webp' +
-          CLEAR_CACHE_VERSION,
+        src: BaseUrlAddress + 'images/icons/512/app-logo.webp' + CLEAR_CACHE_VERSION,
         sizes: '512x512',
         type: 'image/webp',
       },

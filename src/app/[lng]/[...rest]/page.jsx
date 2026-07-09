@@ -13,5 +13,11 @@ export default function Index() {
     button: t('notFound.button'),
   };
 
-  return <Problems content={content} code={404} currentLang={currentLang} />;
+  return (
+    <Problems
+      content={content}
+      code={404}
+      currentLang={currentLang}
+    />
+  );
 }

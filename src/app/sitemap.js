@@ -25,10 +25,7 @@ async function getAllStaticRoutes() {
     const files = fs.readdirSync(dir, { withFileTypes: true });
 
     for (const file of files) {
-      if (
-        file.name.startsWith('(') ||
-        ['api', 'sitemap', 'loading', '[...rest]'].includes(file.name)
-      ) {
+      if (file.name.startsWith('(') || ['api', 'sitemap', 'loading', '[...rest]'].includes(file.name)) {
         continue;
       }
 
@@ -36,17 +33,11 @@ async function getAllStaticRoutes() {
         const fullPath = path.join(dir, file.name);
         const newBase = base ? `${base}/${file.name}` : file.name;
 
-        const hasPage = ['.js', '.jsx', '.ts', '.tsx'].some((ext) =>
-          fs.existsSync(path.join(fullPath, `page${ext}`))
-        );
+        const hasPage = ['.js', '.jsx', '.ts', '.tsx'].some((ext) => fs.existsSync(path.join(fullPath, `page${ext}`)));
 
         if (hasPage) {
           const now = new Date();
-          const startOfDay = new Date(
-            now.getFullYear(),
-            now.getMonth(),
-            now.getDate()
-          );
+          const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
           const lastModified = startOfDay.toISOString();
 
           routes.set(newBase, lastModified);
@@ -72,20 +63,11 @@ export default async function sitemap() {
   const staticRoutes = await getAllStaticRoutes();
   const entries = [];
 
-  function addEntry({
-    path = '',
-    lastModified = new Date(),
-    changeFrequency = 'weekly',
-    priority = 0.8,
-  }) {
-    const base = BaseUrlAddress.endsWith('/')
-      ? BaseUrlAddress.slice(0, -1)
-      : BaseUrlAddress;
+  function addEntry({ path = '', lastModified = new Date(), changeFrequency = 'weekly', priority = 0.8 }) {
+    const base = BaseUrlAddress.endsWith('/') ? BaseUrlAddress.slice(0, -1) : BaseUrlAddress;
 
     const isRoot = path === '/' || path === '';
-    const cleanPath = isRoot
-      ? ''
-      : fixSlashes(path.startsWith('/') ? path : `/${path}`);
+    const cleanPath = isRoot ? '' : fixSlashes(path.startsWith('/') ? path : `/${path}`);
 
     const alternates = { languages: {} };
     for (const lng of languages) {

@@ -9,11 +9,7 @@ const runsOnServerSide = typeof window === 'undefined';
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(
-    resourcesToBackend((language, namespace) =>
-      import(`@i18n/locales/${language}/${namespace}.json`)
-    )
-  )
+  .use(resourcesToBackend((language, namespace) => import(`@i18n/locales/${language}/${namespace}.json`)))
   .init({
     supportedLngs: languages,
     fallbackLng,

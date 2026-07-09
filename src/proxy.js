@@ -17,8 +17,7 @@ export async function proxy(req) {
   const path = req.nextUrl.pathname;
 
   // skip icons, chrome resources
-  if (path.includes('icon') || path.includes('chrome'))
-    return NextResponse.next();
+  if (path.includes('icon') || path.includes('chrome')) return NextResponse.next();
 
   if (path === '/') return NextResponse.next();
 
@@ -62,9 +61,7 @@ export async function proxy(req) {
 
   if (req.headers.has('referer')) {
     const refererUrl = new URL(req.headers.get('referer'));
-    const lngInReferer = languages.find((l) =>
-      refererUrl.pathname.startsWith(`/${l}`)
-    );
+    const lngInReferer = languages.find((l) => refererUrl.pathname.startsWith(`/${l}`));
     const response = NextResponse.next({ headers });
     if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
     return response;

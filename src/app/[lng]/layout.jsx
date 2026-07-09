@@ -5,8 +5,7 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export const generateMetadata = (props) =>
-  import('@utils/metadata').then((m) => m.generateMetadata(props, 'home'));
+export const generateMetadata = (props) => import('@utils/metadata').then((m) => m.generateMetadata(props, 'home'));
 
 export default async function LngLayout({ children, params }) {
   const { lng } = (await params) || { lng: null };

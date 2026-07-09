@@ -13,5 +13,11 @@ export default function Index() {
     button: t('error.button'),
   };
 
-  return <Problems content={content} code={500} currentLang={currentLang} />;
+  return (
+    <Problems
+      content={content}
+      code={500}
+      currentLang={currentLang}
+    />
+  );
 }

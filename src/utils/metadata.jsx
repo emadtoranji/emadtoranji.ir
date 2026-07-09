@@ -36,12 +36,7 @@ const merge = (page = {}, general = {}) => ({
   category: page?.category || general?.category || 'General',
 });
 
-export async function generateMetadata(
-  { params },
-  forcedPage = null,
-  robotsFollow = true,
-  robotsIndex = true
-) {
+export async function generateMetadata({ params }, forcedPage = null, robotsFollow = true, robotsIndex = true) {
   const { lng } = (await params) || { lng: null };
   const { t, i18n } = await getT(lng, 'meta');
   const currentLang = i18n?.language || fallbackLng;
@@ -58,9 +53,7 @@ export async function generateMetadata(
   meta.title = String(meta.title).replace('{{siteName}}', siteName);
   meta.description = String(meta.description).replace('{{siteName}}', siteName);
 
-  const canonical = buildUrl(
-    pageName === 'home' ? currentLang : `${currentLang}/${pageName}`
-  );
+  const canonical = buildUrl(pageName === 'home' ? currentLang : `${currentLang}/${pageName}`);
 
   const image1200 = buildUrl(imageBySize(1200));
   const image512 = buildUrl(imageBySize(512));
