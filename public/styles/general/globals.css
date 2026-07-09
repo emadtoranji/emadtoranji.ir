@@ -33,8 +33,14 @@ a {
 .bolder-on-hover:hover {
   font-weight: bolder !important;
 }
+.transform-left-on-hover,
 .transform-up-on-hover {
   transition: transform 0.2s ease !important;
+}
+
+.transform-left-on-hover:hover {
+  font-weight: bolder !important;
+  transform: translateX(-4px) !important;
 }
 .transform-up-on-hover:hover {
   transform: translateY(-4px) !important;
@@ -87,6 +93,61 @@ a {
 
 @media print {
   @page {
-    size: A4;
+    size: A4 portrait !important;
+    margin: 8mm 10mm; 
+    padding: 2mm; 
+  }
+
+  html, body {
+    font-size: 8.5px !important; 
+    background: white !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  a, a * {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+
+  .resume-wrapper {
+    display: grid !important;
+    grid-template-columns: 72% 28% !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+  
+  .order-xl-last {
+    order: 1 !important;
+  }
+
+  .section-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  
+  .social-media {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .animate__animated,
+  .animate__pulse {
+    display: none !important;
   }
 }
