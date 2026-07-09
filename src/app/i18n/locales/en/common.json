@@ -49,9 +49,7 @@
       }
     ],
     "summary-title": "Summary",
-    "summary-text": "I am a Full-Stack Web Developer with over {{experienceYears}} years of experience in designing and implementing modern, scalable web applications. My areas of expertise include designing websites, web applications, web services, and Telegram bots. My focus is on creating secure, fast, and user-friendly systems. I have extensive experience in freelance projects and team collaboration, and I always aim to provide creative solutions and continuously improve the user experience.",
-    "skills-title": "Skills",
-    "skills-items": [
+"summary-text": "I am a full-stack developer with specialized experience in web-based systems engineering and implementation. My main focus is on creating beautiful user experiences and flawless performance using Next.js architecture and modern Tailwind CSS styling. I have the ability to implement secure authentication infrastructures with Next-Auth and manage complex databases to design a fully responsive, fast, and scalable product for your business.",    "skills-items": [
       {
         "title": "Front-end Web Development",
         "values": [
@@ -98,14 +96,13 @@
     "experience-role": "Full-Stack Web Developer",
     "experience-description": "Full-Stack Developer (October 2018 – present)",
     "experience-items": [
-      "Design and implement dynamic and responsive user interfaces",
-      "Develop secure and scalable backend systems with Node.js and PHP",
-      "Implement secure APIs for system integration and improve interactions between services",
-      "Build bots Telegram with interactive capabilities and modern design to automate processes",
-      "Optimizing website performance by reducing loading time",
-      "Analyzing customer needs and providing customized solutions",
-      "Designing management dashboards with a focus on user experience"
-    ],
+"Design and implement web applications from scratch using Next.js to achieve the highest speed and best SEO.",
+"Professional use of Tailwind CSS to develop fully responsive user interfaces (UI) that comply with the most modern design trends.",
+"Implement comprehensive authentication systems with Next-Auth to securely manage user access levels.",
+"Build high-speed Telegram mini-applications and integrate them with dedicated web services and payment gateways.",
+"Design and normalize databases (SQL and PostgreSQL) for fast processing of large volumes of information.",
+"Develop analytical dashboards with multilingual capabilities for international user use."
+],
     "portfolio-title": "Portfolio",
     "portfolio-items": [
       {

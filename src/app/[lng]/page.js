@@ -15,7 +15,7 @@ const SectionCard = ({ id, title, children }) => (
 );
 
 const ContactItem = ({ icon, label, children }) => (
-  <div className='d-flex gap-1 contact-item bolder-on-hover'>
+  <div className='d-flex gap-1 contact-item transform-left-on-hover'>
     <i className={`fs-5 d-flex align-items-center bi ${icon}`}></i>
     <strong className='fw-normal'>{label}:</strong> {children}
   </div>
