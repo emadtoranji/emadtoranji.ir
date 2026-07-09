@@ -4,7 +4,6 @@
   "private": false,
   "scripts": {
     "dev": "next dev --port 4301",
-    "dev-webpack": "next dev --port 4301 --webpack",
     "build": "next build",
     "start": "next start --port 4302",
     "update": "npx npm-check-updates -u",
@@ -22,8 +21,7 @@
     "next": "16.2.10",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "react-i18next": "17.0.9",
-    "validator": "13.15.35"
+    "react-i18next": "17.0.9"
   },
   "devDependencies": {
     "@types/node": "26.1.1",
