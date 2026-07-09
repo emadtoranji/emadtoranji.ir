@@ -49,7 +49,9 @@
       }
     ],
     "summary-title": "Summary",
-"summary-text": "I am a full-stack developer with specialized experience in web-based systems engineering and implementation. My main focus is on creating beautiful user experiences and flawless performance using Next.js architecture and modern Tailwind CSS styling. I have the ability to implement secure authentication infrastructures with Next-Auth and manage complex databases to design a fully responsive, fast, and scalable product for your business.",    "skills-items": [
+    "summary-text": "I am a full-stack developer with specialized experience in web-based systems engineering and implementation. My main focus is on creating beautiful user experiences and flawless performance using Next.js architecture and modern Tailwind CSS styling. I have the ability to implement secure authentication infrastructures with Next-Auth and manage complex databases to design a fully responsive, fast, and scalable product for your business.",
+    "skills-title": "Skills",
+    "skills-items": [
       {
         "title": "Front-end Web Development",
         "values": [
@@ -96,13 +98,13 @@
     "experience-role": "Full-Stack Web Developer",
     "experience-description": "Full-Stack Developer (October 2018 – present)",
     "experience-items": [
-"Design and implement web applications from scratch using Next.js to achieve the highest speed and best SEO.",
-"Professional use of Tailwind CSS to develop fully responsive user interfaces (UI) that comply with the most modern design trends.",
-"Implement comprehensive authentication systems with Next-Auth to securely manage user access levels.",
-"Build high-speed Telegram mini-applications and integrate them with dedicated web services and payment gateways.",
-"Design and normalize databases (SQL and PostgreSQL) for fast processing of large volumes of information.",
-"Develop analytical dashboards with multilingual capabilities for international user use."
-],
+      "Design and implement web applications from scratch using Next.js to achieve the highest speed and best SEO.",
+      "Professional use of Tailwind CSS to develop fully responsive user interfaces (UI) that comply with the most modern design trends.",
+      "Implement comprehensive authentication systems with Next-Auth to securely manage user access levels.",
+      "Build high-speed Telegram mini-applications and integrate them with dedicated web services and payment gateways.",
+      "Design and normalize databases (SQL and PostgreSQL) for fast processing of large volumes of information.",
+      "Develop analytical dashboards with multilingual capabilities for international user use."
+    ],
     "portfolio-title": "Portfolio",
     "portfolio-items": [
       {
