@@ -1,3 +1,4 @@
+import React from 'react';
 import '@styles/general/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -27,7 +28,7 @@ const gulzar = Gulzar({
   variable: '--font-gulzar',
 });
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang='auto'

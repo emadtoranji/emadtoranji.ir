@@ -1,8 +1,21 @@
+import React from 'react';
 import { getT } from '@i18n/server';
-import { fallbackLng } from '@i18n/settings';
+import { fallbackLng, languages } from '@i18n/settings';
 import { numberToFarsi } from '@utils/numbers';
 
-const SectionCard = ({ id, title, children }) => (
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
+export const dynamic = 'force-static';
+
+interface SectionCardProps {
+  id?: string;
+  title: string;
+  children: React.ReactNode;
+}
+
+const SectionCard: React.FC<SectionCardProps> = ({ id, title, children }) => (
   <div
     className='w-100 animation-fade-in bg-white border border-secondary border-opacity-10 shadow-sm px-4 p-3 rounded-3 fs-6'
     id={id}
@@ -12,14 +25,25 @@ const SectionCard = ({ id, title, children }) => (
   </div>
 );
 
-const ContactItem = ({ icon, label, children }) => (
+interface ContactItemProps {
+  icon: string;
+  label: string;
+  children: React.ReactNode;
+}
+
+const ContactItem: React.FC<ContactItemProps> = ({ icon, label, children }) => (
   <div className='d-flex gap-1 contact-item transform-left-on-hover'>
     <i className={`fs-5 d-flex align-items-center bi ${icon}`}></i>
     <strong className='fw-normal'>{label}:</strong> {children}
   </div>
 );
 
-const SocialLink = ({ href, icon }) => (
+interface SocialLinkProps {
+  href: string;
+  icon: string;
+}
+
+const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
   <div className='d-flex justify-content-center transform-up-on-hover'>
     <a
       href={href}
@@ -31,10 +55,19 @@ const SocialLink = ({ href, icon }) => (
   </div>
 );
 
-const ListItem = ({ children }) => <li className='mb-2 user-select-all'>{children}</li>;
+const ListItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <li className='mb-2 user-select-all'>{children}</li>
+);
 
-function ListItems({ section, item }) {
-  let type;
+interface ListItemData {
+  title?: string;
+  url?: string;
+  description?: string;
+  values?: string[];
+}
+
+function ListItems({ item }: { section?: string; item: ListItemData }) {
+  let type: 'string' | 'array' | undefined;
   if (item?.description) {
     type = 'string';
   } else if (Array.isArray(item?.values)) {
@@ -43,10 +76,10 @@ function ListItems({ section, item }) {
     return undefined;
   }
 
-  const count = item?.values?.length || item?.description || 0;
+  const count = item?.values?.length || item?.description?.length || 0;
 
   return count && item?.title ? (
-    <div className={`line-seperator-range position-relative py-1`}>
+    <div className='line-seperator-range position-relative py-1'>
       <div className='fw-light d-flex align-items-center justify-content-between'>
         <div className='fw-bold '>{item.title}</div>
         {item?.url ? (
@@ -64,10 +97,10 @@ function ListItems({ section, item }) {
         style={type === 'array' ? { direction: 'ltr', textAlign: 'left' } : {}}
         className='d-flex flex-wrap'
       >
-        {type == 'string' ? (
+        {type === 'string' ? (
           <div className='text-justify mx-1 user-select-all'>{item.description}</div>
         ) : (
-          item.values.map((i, index) => {
+          item.values?.map((i, index) => {
             return (
               <div
                 key={index}
@@ -75,7 +108,7 @@ function ListItems({ section, item }) {
                 className='transform-up-on-hover user-select-all'
               >
                 <span className=''>{i}</span>
-                {index < count - 1 ? <span className='me-1'>,</span> : ''}
+                {index < (item.values?.length || 0) - 1 ? <span className='me-1'>,</span> : ''}
               </div>
             );
           })
@@ -85,14 +118,38 @@ function ListItems({ section, item }) {
   ) : undefined;
 }
 
-export default async function Index({ params }) {
-  const { lng } = (await params) || { lng: null };
+interface IndexProps {
+  params?: Promise<{ lng?: string }> | { lng?: string };
+}
+
+interface PersonalItem {
+  label?: string;
+  logo: string;
+  value: string;
+  href?: string;
+}
+
+interface SocialItem {
+  logo: string;
+  href: string;
+}
+
+export default async function Index({ params }: IndexProps) {
+  const resolvedParams = await params;
+  const lng = resolvedParams?.lng || null;
   const { t, i18n } = await getT(lng);
   const currentLang = i18n?.language || fallbackLng;
 
   const currentYear = new Date().getFullYear();
   const experienceYears = currentYear - 2018;
   const experienceYearsFA = numberToFarsi(experienceYears, currentLang);
+
+  const personalItems = (t('home.personal-items', { returnObjects: true }) as PersonalItem[]) || [];
+  const socialItems = (t('home.social-items', { returnObjects: true }) as SocialItem[]) || [];
+  const skillsItems = (t('home.skills-items', { returnObjects: true }) as ListItemData[]) || [];
+  const experienceItems = (t('home.experience-items', { returnObjects: true }) as string[]) || [];
+  const portfolioItems = (t('home.portfolio-items', { returnObjects: true }) as ListItemData[]) || [];
+  const educationItems = (t('home.education-items', { returnObjects: true }) as string[]) || [];
 
   return (
     <main>
@@ -112,7 +169,7 @@ export default async function Index({ params }) {
                 title={t('home.personal-details-title')}
               >
                 <div className='row g-2 fs-6'>
-                  {t('home.personal-items', { returnObjects: true }).map((item, index) => {
+                  {personalItems.map((item, index) => {
                     const finalVal = <span className='user-select-all'>{item?.value}</span>;
                     return (
                       <ContactItem
@@ -137,7 +194,7 @@ export default async function Index({ params }) {
                 </div>
 
                 <div className='row row-cols-4 mx-auto mt-3 mt-md-4 mb-0 mb-sm-1 fs-2 social-media text-dark justify-content-center'>
-                  {t('home.social-items', { returnObjects: true }).map((item, index) => (
+                  {socialItems.map((item, index) => (
                     <SocialLink
                       key={index}
                       href={item.href}
@@ -169,7 +226,7 @@ export default async function Index({ params }) {
                 id='skills'
                 title={t('home.skills-title')}
               >
-                {t('home.skills-items', { returnObjects: true }).map((item, index) => (
+                {skillsItems.map((item, index) => (
                   <ListItems
                     key={`experience-${index}`}
                     section='skills'
@@ -186,7 +243,7 @@ export default async function Index({ params }) {
                   <strong className='user-select-all'>{t('home.experience-description')}</strong>
                 </p>
                 <ul className='px-2'>
-                  {t('home.experience-items', { returnObjects: true }).map((item, index) => (
+                  {experienceItems.map((item, index) => (
                     <ListItem key={`experience-${index}`}>{item}</ListItem>
                   ))}
                 </ul>
@@ -196,7 +253,7 @@ export default async function Index({ params }) {
                 id='portfolio'
                 title={t('home.portfolio-title')}
               >
-                {t('home.portfolio-items', { returnObjects: true }).map((item, index) => (
+                {portfolioItems.map((item, index) => (
                   <ListItems
                     key={`portfolio-${index}`}
                     item={item}
@@ -209,7 +266,7 @@ export default async function Index({ params }) {
                 title={t('home.education-title')}
               >
                 <ul className='px-2'>
-                  {t('home.education-items', { returnObjects: true }).map((item, index) => (
+                  {educationItems.map((item, index) => (
                     <ListItem key={`education-${index}`}>{item}</ListItem>
                   ))}
                 </ul>

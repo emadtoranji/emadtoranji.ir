@@ -1,7 +1,19 @@
+import React from 'react';
 import { fallbackLng } from '@i18n/settings';
 import Link from 'next/link';
 
-export default function Problem({ content, code = 404, currentLang = fallbackLng }) {
+interface ProblemsContent {
+  title: string;
+  button: string;
+}
+
+interface ProblemProps {
+  content: ProblemsContent;
+  code?: number | string;
+  currentLang?: string;
+}
+
+export default function Problem({ content, code = 404, currentLang = fallbackLng }: ProblemProps) {
   return (
     <>
       <div className='d-flex align-items-center vh-100 py-5'>
@@ -9,12 +21,12 @@ export default function Problem({ content, code = 404, currentLang = fallbackLng
           <div className='row align-items-center'>
             <div className='col text-center'>
               <div className='lc-block mb-3'>
-                <div editable='rich'>
+                <div>
                   <h1 className='display-1 fw-bold text-muted'>{code}</h1>
                 </div>
               </div>
               <div className='lc-block mb-5'>
-                <div editable='rich'>
+                <div>
                   <p className='rfs-11'>{content.title}</p>
                 </div>
               </div>

@@ -3,14 +3,15 @@
 import i18next from '@i18n/i18next';
 import { useParams } from 'next/navigation';
 import { useEffect, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, UseTranslationResponse, UseTranslationOptions } from 'react-i18next';
 import { fallbackLng } from '@i18n/settings';
 
 const isServer = typeof window === 'undefined';
 
-export function useT(ns, options) {
+export function useT(ns?: string | string[], options?: UseTranslationOptions<any>): UseTranslationResponse<any, any> {
   const params = useParams();
-  const lng = params?.lng || fallbackLng;
+  const rawLng = params?.lng;
+  const lng: string = typeof rawLng === 'string' ? rawLng : Array.isArray(rawLng) ? rawLng[0] : fallbackLng;
 
   if (typeof lng !== 'string') {
     throw new Error('useT is only available inside /app/[lng]');

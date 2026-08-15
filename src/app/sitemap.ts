@@ -1,11 +1,22 @@
+import type { MetadataRoute } from 'next';
 import { languages } from '@i18n/settings';
 import BaseUrlAddress from '@utils/BaseUrlAddress';
 import fs from 'fs';
 import path from 'path';
 
-const MUST_HAVE_PAGES = [];
+const MUST_HAVE_PAGES: string[] = [];
 
-const DYNAMIC_ROUTES = [
+interface DynamicRouteItem {
+  slug: string;
+  updatedAt?: string | Date;
+}
+
+interface DynamicRouteDef {
+  segment: string;
+  getAllSlugs: () => Promise<DynamicRouteItem[]>;
+}
+
+const DYNAMIC_ROUTES: DynamicRouteDef[] = [
   {
     segment: '[lng]',
     getAllSlugs: async () => [],
@@ -16,10 +27,10 @@ export const dynamic = 'force-static';
 
 const appDir = path.join(process.cwd(), 'src', 'app');
 
-async function getAllStaticRoutes() {
-  const routes = new Map();
+async function getAllStaticRoutes(): Promise<Map<string, string>> {
+  const routes = new Map<string, string>();
 
-  function walk(dir, base = '') {
+  function walk(dir: string, base: string = '') {
     if (!fs.existsSync(dir)) return;
 
     const files = fs.readdirSync(dir, { withFileTypes: true });
@@ -49,27 +60,39 @@ async function getAllStaticRoutes() {
   }
 
   walk(appDir);
-  MUST_HAVE_PAGES.forEach((r) => routes.set(r, new Date()));
+  MUST_HAVE_PAGES.forEach((r) => routes.set(r, new Date().toISOString()));
 
   return routes;
 }
 
-function fixSlashes(text) {
+function fixSlashes(text: string): string {
   const fixed = text.replace(/\/+/g, '/');
   return fixed !== '/' ? fixed.replace(/\/$/, '') : '/';
 }
 
-export default async function sitemap() {
-  const staticRoutes = await getAllStaticRoutes();
-  const entries = [];
+interface EntryOptions {
+  path?: string;
+  lastModified?: string | Date;
+  changeFrequency?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  priority?: number;
+}
 
-  function addEntry({ path = '', lastModified = new Date(), changeFrequency = 'weekly', priority = 0.8 }) {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticRoutes = await getAllStaticRoutes();
+  const entries: MetadataRoute.Sitemap = [];
+
+  function addEntry({
+    path = '',
+    lastModified = new Date(),
+    changeFrequency = 'weekly',
+    priority = 0.8,
+  }: EntryOptions) {
     const base = BaseUrlAddress.endsWith('/') ? BaseUrlAddress.slice(0, -1) : BaseUrlAddress;
 
     const isRoot = path === '/' || path === '';
     const cleanPath = isRoot ? '' : fixSlashes(path.startsWith('/') ? path : `/${path}`);
 
-    const alternates = { languages: {} };
+    const alternates: { languages: Record<string, string> } = { languages: {} };
     for (const lng of languages) {
       alternates.languages[lng] = `${base}${fixSlashes(`/${lng}${cleanPath}`)}`;
     }

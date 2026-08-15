@@ -1,8 +1,9 @@
 import BaseUrlAddress from '@utils/BaseUrlAddress';
+import type { MetadataRoute } from 'next';
 
-const disallow = ['/api/'];
+const disallow: string[] = ['/api/'];
 
-export default function robots() {
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {

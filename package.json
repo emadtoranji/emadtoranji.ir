@@ -1,6 +1,6 @@
 {
   "name": "emadtoranji.ir",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "private": false,
   "scripts": {
     "dev": "next dev --port 4301",
@@ -18,18 +18,22 @@
     "bootstrap-icons": "^1.13.1",
     "i18next": "26.3.6",
     "i18next-browser-languagedetector": "8.2.1",
-    "i18next-resources-to-backend": "1.2.1",
-    "next": "16.2.10",
-    "react": "19.2.7",
-    "react-dom": "19.2.7",
-    "react-i18next": "17.0.9"
+    "i18next-resources-to-backend": "1.2.3",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-i18next": "17.0.11"
   },
   "devDependencies": {
-    "prettier": "^3.9.4",
-    "@types/node": "26.1.1",
-    "@types/react": "19.2.17",
+    "@babel/eslint-parser": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
     "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^10",
-    "eslint-config-next": "16.2.10"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.3.1",
+    "prettier": "^3.9.6",
+    "typescript": "^7.0.2"
   }
 }

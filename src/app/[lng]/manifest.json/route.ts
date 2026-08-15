@@ -1,6 +1,6 @@
-import { getT } from '@i18n/server';
-import { languages } from '@i18n/settings';
+import { fallbackLng, languages } from '@i18n/settings';
 import BaseUrlAddress from '@utils/BaseUrlAddress';
+import globalSettings from '@utils/globalSettings';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -8,21 +8,21 @@ export async function generateStaticParams() {
 
 export const dynamic = 'force-static';
 
-const CLEAR_CACHE_VERSION = '?v=' + process.env.NEXT_PUBLIC_CLEAR_CACHE_VERSION;
+const CLEAR_CACHE_VERSION = '?v=' + globalSettings.clearCacheVersion;
 
-export async function GET(request, { params }) {
+export async function GET(_request: Request, { params }: { params: Promise<{ lng?: string }> }) {
   const { lng } = (await params) || { lng: null };
-  let CommonT = await getT(lng);
-  CommonT = CommonT.t;
-  const { t, i18n } = await getT(lng, 'meta');
-  const currentLang = i18n?.language || fallbackLng;
-  const keywords = t('general.keywords', { returnObjects: true });
+  const currentLang = lng && languages.includes(lng) ? lng : fallbackLng;
+
+  // Static translations dictionary or dynamic import with high performance
+  const commonData = await import(`@i18n/locales/${currentLang}/common.json`);
+  const metaData = await import(`@i18n/locales/${currentLang}/meta.json`);
 
   const response = {
-    name: CommonT('general.siteFullName', ''),
-    short_name: CommonT('general.siteName', ''),
-    description: t('general.description', ''),
-    lang: currentLang || fallbackLng,
+    name: commonData.general?.siteFullName || '',
+    short_name: commonData.general?.siteName || '',
+    description: metaData.general?.description || '',
+    lang: currentLang,
     start_url: '/',
     display: 'standalone',
     scope: '/',
@@ -51,7 +51,7 @@ export async function GET(request, { params }) {
         type: 'image/webp',
       },
     ],
-    categories: Array.isArray(keywords) ? keywords : [],
+    categories: Array.isArray(metaData.general?.keywords) ? metaData.general.keywords : [],
     related_applications: [],
     prefer_related_applications: false,
   };
