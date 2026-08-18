@@ -1,83 +1,12 @@
-@import './rtl.css';
-@import './ltr.css';
-@import './colors.css';
+@import "tailwindcss";
 
-html,
-body {
-  scroll-behavior: smooth;
-  line-height: 1.8 !important;
-  user-select: none;
+*{
+  font-family: var(--font-vazirmatn);
 }
 
-.user-select-all {
-  user-select: none !important;
-}
-
-.dir-ltr {
-  direction: ltr !important;
-}
-
-.dir-rtl {
-  direction: rtl !important;
-}
-
-a {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-.text-justify {
-  text-align: justify !important;
-}
-
-.bolder-on-hover:hover {
-  font-weight: bolder !important;
-}
-.transform-left-on-hover,
-.transform-up-on-hover {
-  transition: transform 0.2s ease !important;
-}
-
-.transform-left-on-hover:hover {
-  font-weight: bolder !important;
-  transform: translateX(-4px) !important;
-}
-.transform-up-on-hover:hover {
-  transform: translateY(-4px) !important;
-}
-
-.contact-item {
-  transition: color 0.3s;
-}
-
-.line-seperator-range:not(:last-child)::after,
-.line-range::after {
-  content: '';
-  position: absolute;
-  width: 10%;
-  height: 2px;
-  bottom: -2px;
-  transition: width 0.3s;
-}
-
-.line-seperator-range:not(:last-child)::after {
-  width: 100%;
-  height: 0.5px;
-}
-
-.line-range:hover::after {
-  width: 20%;
-}
-
-/* .animation-pulse-hover:hover {
-  display: inline-block;
-  animation: pulse;
-  animation-duration: 2s;
-  font-weight: 500;
-} */
-
-.animation-fade-in {
-  animation: 0.5s ease-in-out fadeInScale;
+@page {
+  size: A4 portrait;
+  margin: 3.5mm 4.5mm 3.5mm 4.5mm;
 }
 
 @keyframes fadeInScale {
@@ -91,63 +20,11 @@ a {
   }
 }
 
-@media print {
-  @page {
-    size: A4 portrait !important;
-    margin: 8mm 10mm; 
-    padding: 2mm; 
-  }
-
-  html, body {
-    font-size: 8.5px !important; 
-    background: white !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  a, a * {
-    pointer-events: auto !important;
-    cursor: pointer !important;
-  }
-
-  a {
-    text-decoration: none !important;
-    display: inline-block !important;
-  }
-
-  a[href]::after {
-    content: none !important;
-  }
-
-  .resume-wrapper {
-    display: grid !important;
-    grid-template-columns: 72% 28% !important;
-    gap: 1rem !important;
-    width: 100% !important;
-  }
-  
-  .order-xl-last {
-    order: 1 !important;
-  }
-
-  .section-card {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-  
-  .social-media {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-
-  .animate__animated,
-  .animate__pulse {
-    display: none !important;
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

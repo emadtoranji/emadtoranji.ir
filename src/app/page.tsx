@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import type { GenerateMetadataProps } from '@utils/metadata';
 import Layout from '@app/[lng]/layout';
 import Page from '@app/[lng]/page';
 
-export const generateMetadata = (props: any): Promise<Metadata> =>
+export const generateMetadata = (props: GenerateMetadataProps): Promise<Metadata> =>
   import('@utils/metadata').then((m) => m.generateMetadata(props, 'home'));
 
 export default async function RootPage() {

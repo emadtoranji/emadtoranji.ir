@@ -10,8 +10,6 @@ const site = {
   twitter: globalSettings.site.twitter,
 };
 
-const CLEAR_CACHE_VERSION = '?v=' + globalSettings.clearCacheVersion;
-
 const buildUrl = (path: string = ''): string => `${site.domain}${path}`;
 
 const extractPageName = (
@@ -31,8 +29,8 @@ const extractPageName = (
 };
 
 const imageBySize = (size?: number | string): string => {
-  if (!size) return `images/app-logo.webp${CLEAR_CACHE_VERSION}`;
-  return `images/icons/${size}/app-logo.webp${CLEAR_CACHE_VERSION}`;
+  if (!size) return 'images/app-logo.webp';
+  return `images/icons/${size}/app-logo.webp`;
 };
 
 interface MetaContent {
@@ -49,17 +47,23 @@ const merge = (page: Partial<MetaContent> = {}, general: Partial<MetaContent> = 
   category: page?.category || general?.category || 'General',
 });
 
-interface GenerateMetadataProps {
-  params: Promise<{ lng?: string; [key: string]: any }> | { lng?: string; [key: string]: any };
+export interface MetadataParams {
+  lng?: string;
+  rest?: string[];
+  [key: string]: string | string[] | undefined;
+}
+
+export interface GenerateMetadataProps {
+  params?: Promise<MetadataParams> | MetadataParams;
 }
 
 export async function generateMetadata(
-  { params }: GenerateMetadataProps,
+  props: GenerateMetadataProps,
   forcedPage: string | null = null,
   robotsFollow: boolean = true,
   robotsIndex: boolean = true,
 ): Promise<Metadata> {
-  const resolvedParams = await params;
+  const resolvedParams = props?.params ? await props.params : undefined;
   const lng = resolvedParams?.lng || null;
   const { t, i18n } = await getT(lng, 'meta');
   const currentLang = i18n?.language || fallbackLng;
@@ -87,6 +91,7 @@ export async function generateMetadata(
   for (const l of languages) {
     alternates[l] = buildUrl(pageName === 'home' ? l : `${l}/${pageName}`);
   }
+  alternates['x-default'] = buildUrl(pageName === 'home' ? fallbackLng : `${fallbackLng}/${pageName}`);
 
   return {
     metadataBase: new URL(site.domain),
@@ -99,8 +104,11 @@ export async function generateMetadata(
     description: meta.description,
     keywords: meta.keywords,
     category: meta.category,
+    authors: [{ name: globalSettings.site.name, url: site.domain }],
+    creator: globalSettings.site.name,
+    publisher: globalSettings.site.name,
 
-    manifest: `/${currentLang}/manifest.json${CLEAR_CACHE_VERSION}`,
+    manifest: `/${currentLang}/manifest.json`,
 
     alternates: {
       canonical,
@@ -112,8 +120,9 @@ export async function generateMetadata(
       description: meta.description,
       url: canonical,
       siteName: site.name,
-      type: 'website',
-      locale: currentLang,
+      type: 'profile',
+      locale: currentLang === 'fa' ? 'fa_IR' : 'en_US',
+      alternateLocale: currentLang === 'fa' ? ['en_US'] : ['fa_IR'],
       images: [
         {
           url: image1200,
@@ -130,6 +139,7 @@ export async function generateMetadata(
       description: meta.description,
       images: [image1200],
       site: site.twitter,
+      creator: site.twitter,
     },
 
     icons: {
@@ -143,10 +153,28 @@ export async function generateMetadata(
     robots: {
       index: robotsIndex,
       follow: robotsFollow,
+      googleBot: {
+        index: robotsIndex,
+        follow: robotsFollow,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+
+    other: {
+      'geo.region': globalSettings.geo.region,
+      'geo.placename': globalSettings.geo.placename,
+      'geo.position': globalSettings.geo.position,
+      'ICBM': globalSettings.geo.icbm,
+      'DC.title': meta.title || site.name,
+      'DC.creator': globalSettings.site.name,
+      'DC.coverage': 'Tehran, Iran',
+      'format-detection': 'telephone=no',
+      'apple-mobile-web-app-capable': 'yes',
+      'apple-mobile-web-app-status-bar-style': 'black-translucent',
     },
 
     applicationName: site.name,
-    creator: site.name,
-    publisher: site.name,
   };
 }

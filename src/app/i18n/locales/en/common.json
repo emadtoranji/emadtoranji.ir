@@ -9,139 +9,154 @@
     "personal-items": [
       {
         "label": "Name",
-        "logo": "bi-person-fill color-personal-logo",
+        "logo": "person",
         "value": "Emad Toranji"
       },
       {
         "label": "Email",
-        "logo": "bi-envelope-fill color-personal-logo",
+        "logo": "envelope",
         "value": "emadtoranji6@gmail.com",
         "href": "mailto:emadtoranji6@gmail.com"
       },
       {
         "label": "Contact Number",
-        "logo": "bi-phone-fill color-personal-logo",
+        "logo": "phone",
         "value": "98-912-649-7501",
         "href": "tel:989126497501"
       },
       {
         "label": "Address",
-        "logo": "bi-geo-alt-fill color-personal-logo",
+        "logo": "geo",
         "value": "Iran, Tehran"
       }
     ],
     "social-items": [
       {
-        "logo": "bi-telegram text-primary",
+        "logo": "telegram",
         "href": "https://t.me/emadtoranji"
       },
       {
-        "logo": "bi-linkedin text-primary",
+        "logo": "linkedin",
         "href": "https://www.linkedin.com/in/emadtoranji/?locale=en-US"
       },
       {
-        "logo": "bi-github text-black",
+        "logo": "github",
         "href": "https://github.com/emadtoranji"
       },
       {
-        "logo": "bi-twitter-x text-black",
+        "logo": "x",
         "href": "https://x.com/emadtoranji"
       }
     ],
-    "summary-title": "Summary",
-    "summary-text": "I am a full-stack developer with specialized experience in web-based systems engineering and implementation. My main focus is on creating beautiful user experiences and flawless performance using Next.js architecture and modern Tailwind CSS styling. I have the ability to implement secure authentication infrastructures with Next-Auth and manage complex databases to design a fully responsive, fast, and scalable product for your business.",
+    "summary-title": "Professional Summary",
+    "summary-text": "Full-Stack Web Developer with over 7 years of continuous hands-on experience in architecting, engineering, and deploying scalable web applications and cloud platforms. Specializing in modern web technologies across the Next.js and React ecosystem with App Router, React Server Components (RSC/SSR), and modular UI design using Tailwind CSS. Experienced in building high-throughput RESTful APIs and real-time WebSocket services with Node.js and PHP, modeling and optimizing relational database schemas (PostgreSQL / MySQL), implementing secure authentication pipelines and RBAC with Next-Auth and JWT, and engineering interactive Telegram Mini Apps (TMA) integrated with online payment systems.",
     "skills-title": "Skills",
     "skills-items": [
       {
-        "title": "Front-end Web Development",
+        "title": "Front-end Development",
         "values": [
           "HTML5",
           "CSS3",
-          "JavaScript",
+          "JavaScript (ESNext)",
           "TypeScript",
+          "React",
+          "Next.js (App Router)",
           "Tailwind CSS",
           "Bootstrap",
-          "React",
-          "Next.js",
-          "JQuery"
+          "Responsive Design",
+          "i18n Localization",
+          "SEO & Core Web Vitals"
         ]
       },
       {
-        "title": "Back-end Development",
+        "title": "Back-end & Services",
         "values": [
-          "PHP",
           "Node.js",
-          "REST APIs",
-          "JSON",
-          "Authentication & Authorization",
-          "Server-side Rendering (SSR)",
-          "WebSocket"
+          "PHP",
+          "RESTful APIs",
+          "WebSocket",
+          "Next-Auth & JWT",
+          "Server-Side Rendering (SSR)",
+          "Role-Based Access (RBAC)",
+          "Payment Gateway Integration"
         ]
       },
       {
-        "title": "Database",
-        "values": ["MySQL", "PostgreSQL", "Database Design & Normalization"]
+        "title": "Databases & Architecture",
+        "values": [
+          "PostgreSQL",
+          "MySQL",
+          "Relational Schema Design",
+          "Query Optimization & Indexing",
+          "Data Normalization & Integrity"
+        ]
       },
       {
-        "title": "Tools",
+        "title": "Tools & Infrastructure",
         "values": [
           "Git / GitHub / GitLab",
-          "NPM / Yarn",
-          "VS Code",
-          "Webpack / Vite",
+          "Telegram Mini Apps (TMA)",
           "Postman",
-          "Linux / Command Line"
+          "Vite / Webpack",
+          "NPM / Yarn",
+          "Linux / Command Line",
+          "VS Code"
         ]
       }
     ],
-    "experience-title": "Professional Experience",
+    "experience-title": "Work Experience",
     "experience-role": "Full-Stack Web Developer",
-    "experience-description": "Full-Stack Developer (October 2018 – present)",
+    "experience-description": "Full-Stack Developer (October 2018 – Present)",
     "experience-items": [
-      "Design and implement web applications from scratch using Next.js to achieve the highest speed and best SEO.",
-      "Professional use of Tailwind CSS to develop fully responsive user interfaces (UI) that comply with the most modern design trends.",
-      "Implement comprehensive authentication systems with Next-Auth to securely manage user access levels.",
-      "Build high-speed Telegram mini-applications and integrate them with dedicated web services and payment gateways.",
-      "Design and normalize databases (SQL and PostgreSQL) for fast processing of large volumes of information.",
-      "Develop analytical dashboards with multilingual capabilities for international user use."
+      "Architected and delivered end-to-end web applications with Next.js and React, leveraging React Server Components, Static Site Generation (SSG/ISR), and structured search engine optimization (JSON-LD).",
+      "Engineered component-based design systems and responsive user interfaces with Tailwind CSS, adhering to accessibility standards (WCAG) and smooth UI micro-interactions.",
+      "Implemented end-to-end authentication and role-based access control (RBAC) pipelines, CSRF mitigations, and secure session management using Next-Auth, encrypted JWTs, and HttpOnly cookies.",
+      "Developed high-performance Telegram Mini Apps (TMA) featuring real-time API integrations, online payment gateways, Telegram authentication protocols, and subscription management.",
+      "Modeled, normalized, and optimized relational database schemas (PostgreSQL and MySQL), including query profiling, indexing strategies, and transactional data integrity.",
+      "Built operational admin dashboards and internationalized (i18n) reporting systems featuring dynamic data visualization and structured export pipelines."
     ],
-    "portfolio-title": "Portfolio",
+    "portfolio-title": "Projects & Portfolio",
     "portfolio-items": [
       {
-        "title": "Forex Trading Platform",
+        "title": "MalAra - Financial & Inventory Management Platform",
+        "url": "https://malara.ir",
+        "description": "Comprehensive cloud-based enterprise accounting and inventory management platform. Features custom chart of accounts coding, official invoice generation, multi-warehouse inventory stock cards, Sayad cheque tracking, customer/vendor management, and analytical Excel/PDF reporting."
+      },
+      {
+        "title": "Forex Trading Platform (TonForexFunds)",
         "url": "https://t.me/TonForexFunds_Bot",
-        "description": "A responsive web application built as a Telegram mini-app, featuring user authentication, subscription management, and secure integration with web services. Supports Forex trading through a dedicated server infrastructure with a focus on security, stability, and high performance."
+        "description": "Interactive Telegram Mini App integrated with MetaTrader and financial web services on dedicated infrastructure. Features user authentication, subscription plan billing, automated profit tracking, and real-time trade monitoring."
       },
       {
-        "title": "Web Service Platform",
+        "title": "API Management Platform (API Developers)",
         "url": "https://apidevelopers.ir",
-        "description": "A responsive platform for providing and managing web services (APIs) for developers and businesses. Enables user registration, account balance management, secure API access, and service usage control. Built with a scalable architecture focused on security, transparent usage monitoring, and smooth user experience."
+        "description": "API distribution and infrastructure platform for software engineers and enterprises. Features user registration, wallet balance management, secure API key provisioning, rate-limiting, comprehensive audit logs, and real-time usage analytics."
       },
       {
-        "title": "Digital Menu Platform",
+        "title": "Digital Menu Platform (Menugard)",
         "url": "https://menugard.ir",
-        "description": "Design and development of a comprehensive platform for digitizing and managing store menus with a special focus on restaurants, cafes, fast food and food businesses. This system has been implemented with the aim of eliminating paper menus, improving customer experience and simplifying the content management process for business owners."
+        "description": "Digital menu and ordering platform for restaurants and cafes. Includes administrative tools for product categorization, dynamic pricing, discount rules, custom QR code generation per table, and real-time order processing."
       },
       {
-        "title": "Digital Currency Exchange",
+        "title": "Cryptocurrency Exchange (Bitnorbot)",
         "url": "https://t.me/Bitnorbot",
-        "description": "Responsive web application in the form of a Telegram mini-app with the ability to authenticate users, deposit and withdraw digital currency, convert cryptocurrencies, and display the market view in real time."
+        "description": "Telegram Mini App for cryptocurrency exchange with automated node integrations. Features 2FA user security, custodial wallet balance tracking, cryptocurrency conversion, and live market price feeds."
       },
       {
-        "title": "Corporate Website",
+        "title": "Corporate Website (Aratice)",
         "url": "https://aratice.com",
-        "description": "Design and implementation of a corporate website with a focus on brand identity, smooth user experience, and performance optimization, suitable for introducing services and increasing user interaction."
+        "description": "Corporate website for service presentation and client engagement, engineered with SSR, strict SEO best practices, structured schemas, and fast response times."
       },
       {
-        "title": "Project Ad Registration and Management System",
+        "title": "Project Listing & Ad Platform (Prajects)",
         "url": "https://t.me/Prajects_bot",
-        "description": "Advanced Telegram bot for complete project ad management, including purchasing monthly subscriptions, automatic ad registration and review, online payment, publishing on channels, admin panel, and sending public messages."
+        "description": "Automated Telegram platform for freelance and enterprise project listings. Features automated content validation, subscription tiers with online checkout, automated channel broadcasting, and an administrative control panel."
       }
     ],
     "education-title": "Education",
     "education-items": [
-      "Associate of Computer Engineering | Hormozgan University | 2022",
-      "Bachelor of Computer Engineering | Iranian EUniversity"
+      "Bachelor of Computer Engineering | Iranian EUniversity",
+      "Associate of Computer Engineering | Hormozgan University | 2020 – 2022"
     ]
   }
 }

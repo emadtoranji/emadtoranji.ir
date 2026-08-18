@@ -8,50 +8,61 @@ export async function generateStaticParams() {
 
 export const dynamic = 'force-static';
 
-const CLEAR_CACHE_VERSION = '?v=' + globalSettings.clearCacheVersion;
-
 export async function GET(_request: Request, { params }: { params: Promise<{ lng?: string }> }) {
   const { lng } = (await params) || { lng: null };
   const currentLang = lng && languages.includes(lng) ? lng : fallbackLng;
 
-  // Static translations dictionary or dynamic import with high performance
   const commonData = await import(`@i18n/locales/${currentLang}/common.json`);
   const metaData = await import(`@i18n/locales/${currentLang}/meta.json`);
 
   const response = {
-    name: commonData.general?.siteFullName || '',
-    short_name: commonData.general?.siteName || '',
-    description: metaData.general?.description || '',
+    id: `/${currentLang}`,
+    name: commonData.general?.siteFullName || globalSettings.site.name,
+    short_name: commonData.general?.siteName || globalSettings.site.name,
+    description: metaData.general?.description || globalSettings.site.descriptionEn,
     lang: currentLang,
-    start_url: '/',
-    display: 'standalone',
+    dir: currentLang === 'fa' ? 'rtl' : 'ltr',
+    start_url: `/${currentLang}`,
     scope: '/',
+    display: 'standalone',
     orientation: 'portrait',
-    background_color: '#212529',
-    theme_color: '#212529',
+    background_color: '#0f172a',
+    theme_color: '#1e3a8a',
     icons: [
       {
-        src: BaseUrlAddress + 'images/icons/16/app-logo.webp' + CLEAR_CACHE_VERSION,
+        src: `${BaseUrlAddress}images/icons/16/app-logo.webp`,
         sizes: '16x16',
         type: 'image/webp',
+        purpose: 'any',
       },
       {
-        src: BaseUrlAddress + 'images/icons/32/app-logo.webp' + CLEAR_CACHE_VERSION,
+        src: `${BaseUrlAddress}images/icons/32/app-logo.webp`,
         sizes: '32x32',
         type: 'image/webp',
+        purpose: 'any',
       },
       {
-        src: BaseUrlAddress + 'images/icons/180/app-logo.webp' + CLEAR_CACHE_VERSION,
+        src: `${BaseUrlAddress}images/icons/180/app-logo.webp`,
         sizes: '180x180',
         type: 'image/webp',
+        purpose: 'any',
       },
       {
-        src: BaseUrlAddress + 'images/icons/512/app-logo.webp' + CLEAR_CACHE_VERSION,
+        src: `${BaseUrlAddress}images/icons/1200/app-logo.webp`,
+        sizes: '1200x630',
+        type: 'image/webp',
+        purpose: 'any',
+      },
+      {
+        src: `${BaseUrlAddress}images/app-logo.webp`,
         sizes: '512x512',
         type: 'image/webp',
+        purpose: 'any maskable',
       },
     ],
-    categories: Array.isArray(metaData.general?.keywords) ? metaData.general.keywords : [],
+    categories: Array.isArray(metaData.general?.keywords)
+      ? metaData.general.keywords.slice(0, 10)
+      : ['resume', 'portfolio', 'developer'],
     related_applications: [],
     prefer_related_applications: false,
   };
@@ -59,8 +70,8 @@ export async function GET(_request: Request, { params }: { params: Promise<{ lng
   return Response.json(response, {
     status: 200,
     headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'public, max-age=2678400, immutable',
+      'Content-Type': 'application/manifest+json; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400, stale-while-revalidate=604800',
     },
   });
 }

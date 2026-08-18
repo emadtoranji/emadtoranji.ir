@@ -9,7 +9,7 @@ export const config = {
   matcher: [
     // All routes enter middleware EXCEPT these listed paths and files
     // These paths are loaded directly and do NOT go through proxy
-    '/((?!_next/static|_next/image|assets|styles|images|fonts|manifest.json|sitemap.xml|robots.txt|favicon.ico|sw.js).*)',
+    '/((?!_next/static|_next/image|assets|styles|images|fonts|manifest.json|sitemap.xml|robots.txt|llms.txt|favicon.ico|sw.js).*)',
   ],
 };
 
@@ -60,7 +60,6 @@ export async function proxy(req: NextRequest): Promise<NextResponse> {
     "base-uri 'self'",
     'frame-src https://*.google.com data:',
     "form-action 'self'",
-    "frame-ancestors 'none'",
     ...(isDev ? [] : ['upgrade-insecure-requests']),
   ].join('; ');
 

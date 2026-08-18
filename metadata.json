@@ -1,0 +1,6 @@
+{
+  "name": "Emad Toranji Portfolio",
+  "description": "Personal portfolio and resume application for Emad Toranji",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

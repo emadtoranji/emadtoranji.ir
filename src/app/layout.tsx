@@ -1,10 +1,7 @@
 import React from 'react';
+import { headers } from 'next/headers';
 import '@styles/general/globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'animate.css';
-import { Roboto, Vazirmatn, Gulzar } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/next';
+import { Roboto, Vazirmatn } from 'next/font/google';
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -21,22 +18,27 @@ const vazirmatn = Vazirmatn({
   variable: '--font-vazirmatn',
 });
 
-const gulzar = Gulzar({
-  subsets: ['arabic'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-gulzar',
-});
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headerList = await headers();
+  const lng = headerList.get('x-i18next-current-language') || 'fa';
+  const isRTL = ['fa', 'ar'].includes(lng);
+  const skipText = isRTL ? 'پرش به محتوای اصلی' : 'Skip to main content';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang='auto'
-      dir='auto'
-      className={`${vazirmatn.variable} ${roboto.variable} ${gulzar.variable}`}
+      lang={lng}
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`${vazirmatn.className} ${roboto.className} scroll-smooth leading-[1.8]`}
     >
-      <body className='container-fluid m-0 p-0 min-h-screen'>{children}</body>
-      <Analytics />
+      <body className='m-0 p-0 min-h-screen bg-[#e8edfb] text-[#212529] selection:bg-[#1e3a8a]/20 print:bg-white print:text-[#0f172a] print:text-[6.5pt] print:leading-[1.15] print:w-full print:h-full print:max-h-[290mm] print:overflow-hidden print:m-0 print:p-0'>
+        <a
+          href='#main-content'
+          className='sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#1e3a8a] focus:text-[#facc15] focus:rounded-lg focus:shadow-lg focus:font-bold focus:outline-2 focus:outline-offset-2 focus:outline-[#facc15] no-underline'
+        >
+          {skipText}
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

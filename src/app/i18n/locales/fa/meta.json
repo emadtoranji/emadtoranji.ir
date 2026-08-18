@@ -1,35 +1,41 @@
 {
   "general": {
-    "title": "رزومه عماد ترنجی - توسعه‌دهنده فول‌استک",
-    "description": "توسعه‌دهنده فول‌استک از سال ۱۳۹۷، متخصص در ساخت وب‌اپلیکیشن‌های مدرن، امن و کاربرپسند با تمرکز بر عملکرد و تجربه عالی کاربران.",
+    "title": "رزومه عماد ترنجی - توسعه‌دهنده فول‌استک وب",
+    "description": "رزومه و سوابق کاری عماد ترنجی، توسعه‌دهنده فول‌استک وب در تهران، ایران. متمرکز بر Next.js، TypeScript، React، Tailwind CSS، Node.js، PHP و توسعه سامانه‌های ابری مالی (مال آرا) و مینی‌اپ‌های تلگرام.",
     "keywords": [
-      "HTML5",
-      "CSS3",
+      "عماد ترنجی",
+      "Emad Toranji",
+      "توسعه دهنده فول استک",
+      "برنامه نویس وب تهران",
+      "برنامه نویس Next.js",
+      "توسعه دهنده React",
+      "توسعه دهنده TypeScript",
+      "طراح سایت تهران ایران",
+      "مال آرا",
+      "سیستم مالی و انبارداری",
+      "طراحی مینی اپ تلگرام",
       "Tailwind CSS",
       "Bootstrap",
-      "React",
-      "Next.js",
       "JavaScript",
-      "JQuery",
-      "Wordpress",
-      "Python",
+      "HTML5",
+      "CSS3",
       "PHP",
       "Node.js",
       "REST APIs",
       "JSON",
-      "Authentication & Authorization (JWT, OAuth, Sessions)",
-      "Server-side Rendering (SSR)",
+      "Next-Auth",
+      "SSR",
       "WebSocket",
+      "PostgreSQL",
       "MySQL",
-      "MongoDB",
-      "Database Design & Normalization",
-      "Git / GitHub / GitLab",
+      "Database Normalization",
+      "Git",
+      "GitHub",
       "Docker",
-      "NPM / Yarn",
-      "VS Code",
-      "Webpack / Vite",
-      "Postman",
-      "Linux / Command Line"
+      "Linux",
+      "Vite",
+      "SEO Optimization",
+      "GEO Optimization"
     ]
   },
 
@@ -37,3 +43,4 @@
     "title": "404 - {{siteName}}"
   }
 }
+

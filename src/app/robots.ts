@@ -1,5 +1,6 @@
-import BaseUrlAddress from '@utils/BaseUrlAddress';
 import type { MetadataRoute } from 'next';
+import BaseUrlAddress from '@utils/BaseUrlAddress';
+import globalSettings from '@utils/globalSettings';
 
 const disallow: string[] = ['/api/'];
 
@@ -9,12 +10,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: disallow,
+        disallow,
       },
       {
-        userAgent: ['Googlebot', 'Bingbot', 'Slurp'],
+        userAgent: ['Googlebot', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'YandexBot'],
         allow: '/',
-        disallow: disallow,
+        disallow,
       },
       {
         userAgent: [
@@ -28,11 +29,13 @@ export default function robots(): MetadataRoute.Robots {
           'Meta-ExternalFetcher',
           'CCBot',
           'Amazonbot',
+          'Applebot',
         ],
         allow: '/',
-        disallow: disallow,
+        disallow,
       },
     ],
     sitemap: `${BaseUrlAddress}sitemap.xml`,
+    host: globalSettings.baseUrl.replace(/\/$/, ''),
   };
 }
