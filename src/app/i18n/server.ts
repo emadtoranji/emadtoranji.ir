@@ -11,7 +11,7 @@ export interface GetTResult {
 export async function getT(
   lng?: string | null,
   ns?: string | string[],
-  options?: { keyPrefix?: string }
+  options?: { keyPrefix?: string },
 ): Promise<GetTResult> {
   let finalLng = lng || fallbackLng;
 
@@ -29,11 +29,7 @@ export async function getT(
     }
   }
 
-  const namespaces: string[] = Array.isArray(ns)
-    ? ns
-    : ns
-      ? [ns]
-      : [defaultNS];
+  const namespaces: string[] = Array.isArray(ns) ? ns : ns ? [ns] : [defaultNS];
 
   const i18nInstance = await createServerI18n(finalLng, namespaces);
 

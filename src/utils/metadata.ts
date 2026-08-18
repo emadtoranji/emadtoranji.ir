@@ -166,7 +166,7 @@ export async function generateMetadata(
       'geo.region': globalSettings.geo.region,
       'geo.placename': globalSettings.geo.placename,
       'geo.position': globalSettings.geo.position,
-      'ICBM': globalSettings.geo.icbm,
+      ICBM: globalSettings.geo.icbm,
       'DC.title': meta.title || site.name,
       'DC.creator': globalSettings.site.name,
       'DC.coverage': 'Tehran, Iran',

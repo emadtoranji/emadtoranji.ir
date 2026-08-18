@@ -13,9 +13,8 @@ const initClientI18next = () => {
     .use(LanguageDetector)
     .use(
       resourcesToBackend(
-        (language: string, namespace: string) =>
-          import(`@i18n/locales/${language}/${namespace}.json`)
-      )
+        (language: string, namespace: string) => import(`@i18n/locales/${language}/${namespace}.json`),
+      ),
     );
 
   instance.init({
@@ -39,18 +38,14 @@ if (!i18next.isInitialized) {
 export default i18next;
 
 // Server-side isolated instance creator for full concurrency safety & SSG
-export const createServerI18n = async (
-  lng: string,
-  namespaces: string[]
-): Promise<I18nInstance> => {
+export const createServerI18n = async (lng: string, namespaces: string[]): Promise<I18nInstance> => {
   const i18nInstance = createInstance();
   await i18nInstance
     .use(initReactI18next)
     .use(
       resourcesToBackend(
-        (language: string, namespace: string) =>
-          import(`@i18n/locales/${language}/${namespace}.json`)
-      )
+        (language: string, namespace: string) => import(`@i18n/locales/${language}/${namespace}.json`),
+      ),
     )
     .init({
       lng,

@@ -30,7 +30,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       dir={isRTL ? 'rtl' : 'ltr'}
       className={`${vazirmatn.className} ${roboto.className} scroll-smooth leading-[1.8]`}
     >
-      <body className='m-0 p-0 min-h-screen bg-[#e8edfb] text-[#212529] selection:bg-[#1e3a8a]/20 print:bg-white print:text-[#0f172a] print:text-[6.5pt] print:leading-[1.15] print:w-full print:h-full print:max-h-[290mm] print:overflow-hidden print:m-0 print:p-0'>
+      <body className='m-0 p-0 min-h-screen bg-[#e8edfb] text-[#212529] selection:bg-[#1e3a8a]/20'>
         <a
           href='#main-content'
           className='sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#1e3a8a] focus:text-[#facc15] focus:rounded-lg focus:shadow-lg focus:font-bold focus:outline-2 focus:outline-offset-2 focus:outline-[#facc15] no-underline'
