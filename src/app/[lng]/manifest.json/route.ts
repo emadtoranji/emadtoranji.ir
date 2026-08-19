@@ -49,7 +49,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ lng
       },
       {
         src: `${BaseUrlAddress}images/icons/1200/app-logo.webp`,
-        sizes: '1200x630',
+        sizes: '1200x1200',
         type: 'image/webp',
         purpose: 'any',
       },

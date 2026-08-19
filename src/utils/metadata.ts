@@ -169,7 +169,7 @@ export async function generateMetadata(
       ICBM: globalSettings.geo.icbm,
       'DC.title': meta.title || site.name,
       'DC.creator': globalSettings.site.name,
-      'DC.coverage': 'Tehran, Iran',
+      'DC.coverage': currentLang === 'fa' ? globalSettings.site.locationFa : globalSettings.site.locationEn,
       'format-detection': 'telephone=no',
       'apple-mobile-web-app-capable': 'yes',
       'apple-mobile-web-app-status-bar-style': 'black-translucent',

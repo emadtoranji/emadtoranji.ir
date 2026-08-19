@@ -5,48 +5,35 @@ import BaseUrlAddress from '@utils/BaseUrlAddress';
 export const dynamic = 'force-static';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = BaseUrlAddress.replace(/\/$/, '');
-  const now = new Date();
-  const lastModified = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const lastModified = new Date();
 
-  const languageAlternates: Record<string, string> = {};
-  for (const lng of languages) {
-    languageAlternates[lng] = `${base}/${lng}`;
-  }
-  languageAlternates['x-default'] = `${base}/${fallbackLng}`;
+  const languageAlternates: Record<string, string> = {
+    'x-default': `${BaseUrlAddress}${fallbackLng}`,
+  };
 
-  const entries: MetadataRoute.Sitemap = [
-    // Root URL
-    {
-      url: `${base}/`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1.0,
-      alternates: {
-        languages: languageAlternates,
-      },
-    },
-    // Persian Page
-    {
-      url: `${base}/fa`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1.0,
-      alternates: {
-        languages: languageAlternates,
-      },
-    },
-    // English Page
-    {
-      url: `${base}/en`,
-      lastModified,
-      changeFrequency: 'daily',
-      priority: 1.0,
-      alternates: {
-        languages: languageAlternates,
-      },
-    },
-  ];
+  languages.forEach((lng: string) => {
+    languageAlternates[lng] = `${BaseUrlAddress}${lng}`;
+  });
 
-  return entries;
+  const rootEntry: MetadataRoute.Sitemap[number] = {
+    url: `${BaseUrlAddress}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+    alternates: {
+      languages: languageAlternates,
+    },
+  };
+
+  const localizedEntries: MetadataRoute.Sitemap = languages.map((lng: string) => ({
+    url: `${BaseUrlAddress}${lng}`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: lng === fallbackLng ? 1.0 : 0.9,
+    alternates: {
+      languages: languageAlternates,
+    },
+  }));
+
+  return [rootEntry, ...localizedEntries];
 }

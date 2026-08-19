@@ -28,7 +28,7 @@ const SectionCard: React.FC<SectionCardProps> = ({ id, title, action, className 
     id={id}
     aria-labelledby={`${id}-heading`}
   >
-    <div className='relative flex items-center justify-between gap-2 pb-1.5 mb-2 print:pb-1 print:mb-1.5 text-[#212529] border-b-2 border-[#facc15] after:content-[""] after:absolute after:bottom-[-2px] after:h-[2px] after:w-[12%] after:bg-[#1e3a8a] after:transition-[width] after:duration-350 after:ease-[cubic-bezier(0.4,0,0.2,1)] ltr:after:left-0 rtl:after:right-0 group-hover:after:w-[24%] hover:after:w-[24%] print:after:bg-[#1e3a8a] print:after:w-[18%] print:after:h-[1.5px] print:after:bottom-[-1.5px]'>
+    <div className='relative flex items-center justify-between gap-2 pb-1.5 mb-2 print:pb-1 print:mb-1.5 text-[#212529] border-b-2 border-[#facc15] after:content-[""] after:absolute after:-bottom-0.5 after:h-0.5 after:w-[12%] after:bg-[#1e3a8a] after:transition-[width] after:duration-350 after:ease-in-out ltr:after:left-0 rtl:after:right-0 group-hover:after:w-[24%] hover:after:w-[24%] print:after:bg-[#1e3a8a] print:after:w-[18%] print:after:h-[1.5px] print:after:bottom-[-1.5px]'>
       <h2
         id={`${id}-heading`}
         className='text-lg md:text-xl print:text-lg font-bold m-0 flex-1 leading-snug'
@@ -80,7 +80,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ id, href, icon, label }) => (
       target='_blank'
       rel='noopener noreferrer'
       aria-label={label || 'Social Link'}
-      className='text-[#1e3a8a] hover:text-[#facc15] transition-colors p-1 print:p-0.5 inline-flex items-center justify-center no-underline text-inherit focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a8a] rounded-md'
+      className='p-1 print:p-0.5 inline-flex items-center justify-center no-underline rounded-md'
     >
       <SocialIcon
         name={icon}
@@ -210,7 +210,7 @@ export default async function Index({ params }: IndexProps) {
         '@id': `${globalSettings.baseUrl}#person`,
         name: globalSettings.site.name,
         alternateName: globalSettings.site.nameFa,
-        jobTitle: isFa ? 'توسعه‌دهنده فول‌استک وب' : 'Full-Stack Web Developer',
+        jobTitle: isFa ? globalSettings.site.jobTitleFa : globalSettings.site.jobTitleEn,
         description: isFa ? globalSettings.site.descriptionFa : globalSettings.site.descriptionEn,
         url: globalSettings.baseUrl,
         email: `mailto:${globalSettings.site.email}`,
@@ -232,21 +232,7 @@ export default async function Index({ params }: IndexProps) {
           globalSettings.site.telegram,
           `https://x.com/${globalSettings.site.twitter.replace('@', '')}`,
         ],
-        knowsAbout: [
-          'Next.js',
-          'React',
-          'TypeScript',
-          'JavaScript',
-          'Tailwind CSS',
-          'PHP',
-          'Node.js',
-          'REST APIs',
-          'PostgreSQL',
-          'MySQL',
-          'MalAra (مال آرا)',
-          'Telegram Mini Apps',
-          'Full-Stack Architecture',
-        ],
+        knowsAbout: globalSettings.knowsAbout,
       },
       {
         '@type': 'ProfilePage',
@@ -323,10 +309,10 @@ export default async function Index({ params }: IndexProps) {
             {t('home.header-title')}
           </h1>
         </header>
-        <div className='grid grid-cols-1 xl:grid-cols-12 print:!grid-cols-12 gap-4 print:!gap-4 items-start'>
+        <div className='grid grid-cols-1 xl:grid-cols-12 print:grid-cols-12 gap-4 print:gap-4 items-start'>
           <aside
             id='sidebar-column'
-            className='col-span-1 xl:col-span-4 print:!col-span-4 xl:order-last print:!order-last'
+            className='col-span-1 xl:col-span-4 print:col-span-4 xl:order-last print:order-last'
           >
             <div className='xl:sticky print:static xl:top-20 space-y-4 print:space-y-3.5 self-start flex flex-col w-full'>
               <SectionCard
@@ -362,7 +348,7 @@ export default async function Index({ params }: IndexProps) {
                 </address>
                 <nav
                   aria-label={t('home.social.aria-label') as string}
-                  className='flex items-center justify-center gap-3.5 md:gap-4.5 print:gap-3.5 mt-4 print:mt-2.5 pt-3 print:pt-2 border-t border-[#212529]/10 max-w-[280px] mx-auto w-full'
+                  className='flex items-center justify-center gap-3.5 md:gap-4.5 print:gap-3.5 mt-4 print:mt-2.5 pt-3 print:pt-2 border-t border-[#212529]/10 max-w-70 mx-auto w-full'
                 >
                   {socialItems.map((item, index) => (
                     <SocialLink
@@ -388,7 +374,7 @@ export default async function Index({ params }: IndexProps) {
                       {group.title && (
                         <h3 className='text-xs print:text-xs font-bold text-[#1e3a8a] uppercase tracking-wider flex items-center gap-1.5 m-0 mb-2'>
                           <span className='w-1.5 h-1.5 rounded-full bg-[#facc15] shrink-0 inline-block'></span>
-                          <span className='select-all mt-[1px]'>{group.title}</span>
+                          <span className='select-all mt-px'>{group.title}</span>
                         </h3>
                       )}
                       <div
@@ -400,13 +386,15 @@ export default async function Index({ params }: IndexProps) {
                             key={`skill-${gIndex}-${sIndex}`}
                             type='button'
                             aria-label={`Skill: ${skill}`}
-                            className='inline-flex items-center gap-1.5 px-2.5 py-1 print:px-2 print:py-0.5 text-xs print:text-xs font-semibold rounded-lg bg-[#f8f9fa] text-[#1e293b] border border-[#212529]/15 shadow-2xs hover:bg-[#1e3a8a] hover:text-[#facc15] hover:border-[#1e3a8a] hover:shadow-xs transition-all duration-200 cursor-pointer select-none group/skill focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a8a] print:shadow-none'
+                            className='inline-flex items-center gap-1.5 px-2.5 py-1 print:px-2 print:py-0.5 text-xs print:text-xs font-semibold rounded-lg bg-[#f8f9fa] text-[#1e293b] border border-[#212529]/15 shadow-2xs hover:bg-[#1e3a8a] hover:text-[#facc15] hover:border-[#1e3a8a] hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer select-none group/skill focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a8a] print:shadow-none'
                           >
                             <span
                               className='w-1.5 h-1.5 rounded-full bg-[#1e3a8a] group-hover/skill:bg-[#facc15] transition-colors shrink-0'
                               aria-hidden='true'
                             ></span>
-                            <span className='inline-flex items-center select-all leading-none'>{skill}</span>
+                            <span className='inline-flex items-center select-all leading-none translate-y-[0.5px]'>
+                              {skill}
+                            </span>
                             <span className='sr-only'>{isFa ? ` (مهارت: ${skill})` : ` (Skill: ${skill})`}</span>
                           </button>
                         ))}
@@ -419,7 +407,7 @@ export default async function Index({ params }: IndexProps) {
           </aside>
           <div
             id='content-column'
-            className='col-span-1 xl:col-span-8 print:!col-span-8'
+            className='col-span-1 xl:col-span-8 print:col-span-8'
           >
             <div className='flex flex-col gap-4 print:gap-3.5'>
               <SectionCard

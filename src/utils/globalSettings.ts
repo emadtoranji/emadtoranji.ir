@@ -1,10 +1,12 @@
 export const globalSettings = {
-  baseUrl: 'https://emadtoranji.ir/',
+  baseUrl: process.env.NODE_ENV !== 'production' ? 'http://localhost:3000/' : 'https://emadtoranji.ir/',
   site: {
     name: 'Emad Toranji',
     nameFa: 'عماد ترنجی',
     titleEn: 'Emad Toranji - Full-Stack Web Developer',
     titleFa: 'رزومه عماد ترنجی - توسعه‌دهنده فول‌استک وب',
+    jobTitleFa: 'توسعه‌دهنده فول‌استک وب',
+    jobTitleEn: 'Full-Stack Web Developer',
     descriptionEn:
       'Full-stack developer since 2018 based in Tehran, Iran. Engineering web applications, Telegram mini-apps, and cloud platforms using Next.js, TypeScript, React, Node.js, and Tailwind CSS.',
     descriptionFa:
@@ -19,6 +21,21 @@ export const globalSettings = {
     locationEn: 'Tehran, Iran',
     locationFa: 'ایران، تهران',
   },
+  knowsAbout: [
+    'Next.js',
+    'React',
+    'TypeScript',
+    'JavaScript',
+    'Tailwind CSS',
+    'PHP',
+    'Node.js',
+    'REST APIs',
+    'PostgreSQL',
+    'MySQL',
+    'MalAra (مال آرا)',
+    'Telegram Mini Apps',
+    'Full-Stack Architecture',
+  ],
   geo: {
     region: 'IR-07',
     placename: 'Tehran',
