@@ -386,13 +386,13 @@ export default async function Index({ params }: IndexProps) {
                       className='space-y-1.5 print:space-y-1'
                     >
                       {group.title && (
-                        <h3 className='text-xs print:text-xs font-bold text-[#1e3a8a] uppercase tracking-wider flex items-center gap-1.5 m-0'>
+                        <h3 className='text-xs print:text-xs font-bold text-[#1e3a8a] uppercase tracking-wider flex items-center gap-1.5 m-0 mb-2'>
                           <span className='w-1.5 h-1.5 rounded-full bg-[#facc15] shrink-0 inline-block'></span>
                           <span className='select-all mt-[1px]'>{group.title}</span>
                         </h3>
                       )}
                       <div
-                        className='flex flex-wrap gap-1.5 print:gap-1.5'
+                        className='flex flex-wrap gap-1.5 print:gap-1.5 px-1'
                         dir='ltr'
                       >
                         {group.values?.map((skill, sIndex) => (
@@ -400,13 +400,13 @@ export default async function Index({ params }: IndexProps) {
                             key={`skill-${gIndex}-${sIndex}`}
                             type='button'
                             aria-label={`Skill: ${skill}`}
-                            className='inline-flex items-center gap-1 px-2.5 py-1 print:px-2 print:py-0.5 text-xs print:text-xs font-semibold rounded-lg bg-[#f8f9fa] text-[#1e293b] border border-[#212529]/15 shadow-2xs hover:bg-[#1e3a8a] hover:text-[#facc15] hover:border-[#1e3a8a] hover:shadow-xs hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer select-none group/skill focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a8a] print:shadow-none'
+                            className='inline-flex items-center gap-1.5 px-2.5 py-1 print:px-2 print:py-0.5 text-xs print:text-xs font-semibold rounded-lg bg-[#f8f9fa] text-[#1e293b] border border-[#212529]/15 shadow-2xs hover:bg-[#1e3a8a] hover:text-[#facc15] hover:border-[#1e3a8a] hover:shadow-xs transition-all duration-200 cursor-pointer select-none group/skill focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1e3a8a] print:shadow-none'
                           >
                             <span
                               className='w-1.5 h-1.5 rounded-full bg-[#1e3a8a] group-hover/skill:bg-[#facc15] transition-colors shrink-0'
                               aria-hidden='true'
                             ></span>
-                            <span className='select-all mt-[1px]'>{skill}</span>
+                            <span className='inline-flex items-center select-all leading-none'>{skill}</span>
                             <span className='sr-only'>{isFa ? ` (مهارت: ${skill})` : ` (Skill: ${skill})`}</span>
                           </button>
                         ))}
