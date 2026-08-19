@@ -157,6 +157,38 @@
     "education-items": [
       "Bachelor of Computer Engineering | Iranian EUniversity",
       "Associate of Computer Engineering | Hormozgan University | 2020 – 2022"
-    ]
+    ],
+    "language-switcher": {
+      "switch-to-fa": "تغییر به زبان فارسی",
+      "switch-to-en": "Switch to English",
+      "fa-title": "فارسی",
+      "en-title": "English"
+    },
+    "breadcrumb": {
+      "home": "Home",
+      "resume": "Resume"
+    },
+    "social": {
+      "aria-label": "Social Media Links"
+    },
+    "faq": [
+      {
+        "question": "Who is Emad Toranji?",
+        "answer": "Emad Toranji is a Senior Full-Stack Web Developer based in Tehran, Iran with over 7 years of professional experience building cloud platforms (MalAra), web apps, and Telegram Mini Apps using Next.js, React, TypeScript, Node.js, and PHP."
+      },
+      {
+        "question": "What are the core technical skills of Emad Toranji?",
+        "answer": "Emad Toranji specializes in Next.js App Router, TypeScript, React, Tailwind CSS, Node.js, PHP, PostgreSQL, MySQL, RESTful APIs, WebSockets, and Next-Auth authentication pipelines."
+      },
+      {
+        "question": "What is MalAra?",
+        "answer": "MalAra is a cloud-based enterprise accounting and inventory management platform developed by Emad Toranji. It features custom chart of accounts coding, official invoice generation, multi-warehouse inventory stock cards, Sayad cheque tracking, customer/vendor management, and analytical Excel/PDF reporting."
+      },
+      {
+        "question": "How can I contact Emad Toranji?",
+        "answer": "You can reach Emad Toranji via email at emadtoranji6@gmail.com, phone at +98-912-649-7501, or Telegram at @emadtoranji."
+      }
+    ],
+    "skip-to-content": "Skip to main content"
   }
 }

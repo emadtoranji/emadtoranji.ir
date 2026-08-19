@@ -1,6 +1,7 @@
 import React from 'react';
 import { fallbackLng } from '@i18n/settings';
 import Link from 'next/link';
+import { useT } from '@i18n/client';
 
 interface ProblemsContent {
   title: string;
@@ -14,6 +15,9 @@ interface ProblemProps {
 }
 
 export default function Problem({ content, code = 404, currentLang = fallbackLng }: ProblemProps) {
+  const { t } = useT('error');
+  const returnToHomeText = t('return-to-home') as string;
+
   return (
     <div className='flex items-center justify-center min-h-screen py-12 bg-[#e8edfb] text-[#212529] px-4'>
       <div className='max-w-md w-full text-center space-y-6 bg-white border border-[#212529]/10 p-8 rounded-2xl shadow-sm'>
@@ -30,7 +34,7 @@ export default function Problem({ content, code = 404, currentLang = fallbackLng
             aria-label={content.button}
           >
             <span>{content.button}</span>
-            <span className='sr-only'>{` - Return to home page in ${currentLang}`}</span>
+            <span className='sr-only'>{` - ${returnToHomeText} ${currentLang}`}</span>
           </Link>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { headers } from 'next/headers';
+import { getT } from '@i18n/server';
 import '@styles/general/globals.css';
 import { Roboto, Vazirmatn } from 'next/font/google';
 
@@ -22,7 +23,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const headerList = await headers();
   const lng = headerList.get('x-i18next-current-language') || 'fa';
   const isRTL = ['fa', 'ar'].includes(lng);
-  const skipText = isRTL ? 'پرش به محتوای اصلی' : 'Skip to main content';
+  const { t } = await getT(lng);
+  const skipText = t('home.skip-to-content') as string;
 
   return (
     <html

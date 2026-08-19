@@ -10,5 +10,6 @@
   "error": {
     "title": "Oops! Something went wrong",
     "button": "Back to home"
-  }
+  },
+  "return-to-home": "Return to home page"
 }

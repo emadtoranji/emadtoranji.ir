@@ -134,7 +134,7 @@ function ListItems({ item, idPrefix }: { section?: string; item: ListItemData; i
               strokeWidth={2.5}
               aria-hidden='true'
             />
-            <span className='sr-only'>{`مشاهده آنلاین ${item.title}`}</span>
+            <span className='sr-only'>{`View ${item.title} online`}</span>
           </a>
         ) : undefined}
       </div>
@@ -197,54 +197,10 @@ export default async function Index({ params }: IndexProps) {
   const educationItems = (t('home.education-items', { returnObjects: true }) as string[]) || [];
   const isFa = currentLang === 'fa';
   const targetLang = isFa ? 'en' : 'fa';
-  const targetLangLabel = isFa ? 'Switch to English' : 'تغییر به زبان فارسی';
-  const targetLangTitle = isFa ? 'English' : 'فارسی';
+  const targetLangLabel = t('home.language-switcher.switch-to-en') as string;
+  const targetLangTitle = t('home.language-switcher.en-title') as string;
 
-  const faqItems = isFa
-    ? [
-        {
-          question: 'عماد ترنجی کیست؟',
-          answer:
-            'عماد ترنجی توسعه‌دهنده فول‌استک وب ساکن تهران با بیش از ۷ سال سابقه حرفه‌ای در طراحی و استقرار سامانه‌های ابری (مال آرا) و مینی اپ‌های تلگرام بر پایه Next.js، TypeScript و React است.',
-        },
-        {
-          question: 'عماد ترنجی چه مهارت‌های تخصصی دارد؟',
-          answer:
-            'عماد ترنجی مسلط به Next.js App Router، TypeScript، React، Tailwind CSS، Node.js، PHP، پایگاه‌های داده PostgreSQL و MySQL، RESTful API، WebSocket و Next-Auth است.',
-        },
-        {
-          question: 'سامانه ابری مال آرا (MalAra) چیست؟',
-          answer:
-            'مال آرا پلتفرم ابری مدیریت مالی، حسابداری و انبارداری توسعه‌یافته توسط عماد ترنجی است که شامل صدور فاکتور رسمی، کاردکس انبارداری و ثبت چک صیادی می‌باشد.',
-        },
-        {
-          question: 'چگونه می‌توان با عماد ترنجی ارتباط برقرار کرد؟',
-          answer:
-            'شما می‌توانید از طریق ایمیل emadtoranji6@gmail.com، شماره تماس ۰۹۱۲۶۴۹۷۵۰۱ یا آیدی تلگرام @emadtoranji با عماد ترنجی در ارتباط باشید.',
-        },
-      ]
-    : [
-        {
-          question: 'Who is Emad Toranji?',
-          answer:
-            'Emad Toranji is a Senior Full-Stack Web Developer based in Tehran, Iran with over 7 years of professional experience building cloud platforms (MalAra), web apps, and Telegram Mini Apps using Next.js, React, TypeScript, Node.js, and PHP.',
-        },
-        {
-          question: 'What are the core technical skills of Emad Toranji?',
-          answer:
-            'Emad Toranji specializes in Next.js App Router, TypeScript, React, Tailwind CSS, Node.js, PHP, PostgreSQL, MySQL, RESTful APIs, WebSockets, and Next-Auth authentication pipelines.',
-        },
-        {
-          question: 'What is MalAra?',
-          answer:
-            'MalAra is a cloud financial and inventory management platform developed by Emad Toranji, featuring official invoice generation, multi-warehouse stock tracking, and Sayad cheque management.',
-        },
-        {
-          question: 'How can I contact Emad Toranji?',
-          answer:
-            'You can contact Emad Toranji via email at emadtoranji6@gmail.com, phone at +989126497501, or Telegram @emadtoranji.',
-        },
-      ];
+  const faqItems = (t('home.faq', { returnObjects: true }) as Array<{ question: string; answer: string }>) || [];
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -309,11 +265,16 @@ export default async function Index({ params }: IndexProps) {
         '@type': 'BreadcrumbList',
         '@id': `${globalSettings.baseUrl}${currentLang}#breadcrumb`,
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: isFa ? 'صفحه اصلی' : 'Home', item: `${globalSettings.baseUrl}` },
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: t('home.breadcrumb.home') as string,
+            item: `${globalSettings.baseUrl}`,
+          },
           {
             '@type': 'ListItem',
             position: 2,
-            name: isFa ? 'رزومه' : 'Resume',
+            name: t('home.breadcrumb.resume') as string,
             item: `${globalSettings.baseUrl}${currentLang}`,
           },
         ],
@@ -400,7 +361,7 @@ export default async function Index({ params }: IndexProps) {
                   })}
                 </address>
                 <nav
-                  aria-label='Social Media Links'
+                  aria-label={t('home.social.aria-label') as string}
                   className='flex items-center justify-center gap-3.5 md:gap-4.5 print:gap-3.5 mt-4 print:mt-2.5 pt-3 print:pt-2 border-t border-[#212529]/10 max-w-[280px] mx-auto w-full'
                 >
                   {socialItems.map((item, index) => (
