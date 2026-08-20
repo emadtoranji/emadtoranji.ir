@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 import BaseUrlAddress from '@utils/BaseUrlAddress';
 import globalSettings from '@utils/globalSettings';
 
+export const dynamic = 'force-static';
+
 const baseDisallow: string[] = ['/api/', '/_next/data/', '/private/', '/*?*preview=', '/*?*draft='];
 
 export default function robots(): MetadataRoute.Robots {
