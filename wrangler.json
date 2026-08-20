@@ -1,6 +1,6 @@
 {
   "main": ".open-next/worker.js",
-  "name": "emadtoranji.ir",
+  "name": "emadtoranji-ir",
   "compatibility_date": "2024-12-30",
   "compatibility_flags": ["nodejs_compat"],
   "assets": {
