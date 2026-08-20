@@ -1,5 +1,0 @@
-{
-  "copilotAutoRetry.baseDelayMs": 5000,
-  "copilotAutoRetry.maxDelayMs": 60000,
-  "copilotAutoRetry.maxRetries": 10
-}
