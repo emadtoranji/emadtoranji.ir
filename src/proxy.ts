@@ -3,7 +3,6 @@ import acceptLanguage from 'accept-language';
 import crypto from 'crypto';
 import { fallbackLng, languages, cookieName, headerName } from '@i18n/settings';
 
-
 acceptLanguage.languages(languages);
 
 export const config = {
