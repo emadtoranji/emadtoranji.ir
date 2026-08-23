@@ -55,17 +55,16 @@
       {
         "title": "توسعه فرانت‌اند",
         "values": [
-          "HTML5",
-          "CSS3",
           "JavaScript (ESNext)",
           "TypeScript",
           "React",
-          "Next.js (App Router)",
+          "Next.js",
           "Tailwind CSS",
           "Bootstrap",
           "Responsive Design",
           "i18n Localization",
-          "SEO & Core Web Vitals"
+          "SEO, Geo, AEO",
+          "Core Web Vitals"
         ]
       },
       {
