@@ -44,6 +44,12 @@ export async function proxy(req: NextRequest): Promise<NextResponse> {
     return NextResponse.redirect(new URL(newPath, req.url), { status: 301 });
   }
 
+  // If a valid language has additional segments (e.g. /fa/anything/else), redirect to the language root (e.g. /fa)
+  if (segments.length > 1) {
+    const newPath = `/${firstSegment}`;
+    return NextResponse.redirect(new URL(newPath, req.url), { status: 301 });
+  }
+
   const headers = new Headers(req.headers);
   headers.set(headerName, firstSegment);
 

@@ -1,3 +1,4 @@
+import ExportedImage from 'next-image-export-optimizer';
 import Image from 'next/image';
 import React from 'react';
 
@@ -11,11 +12,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('telegram') || normalized === 'tg') {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/telegram.svg'
         alt='Telegram Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -24,11 +28,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('linkedin')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/linkedin.svg'
         alt='LinkedIn Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -37,11 +44,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('github') || normalized.includes('git')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/github.svg'
         alt='Github Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -50,11 +60,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('twitter') && !normalized.includes(' x') && normalized !== 'x') {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/x.svg'
         alt='X/Twitter Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -63,11 +76,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('x') || normalized.includes('twitter')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/x.svg'
         alt='X/Twitter Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -76,11 +92,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('instagram') || normalized.includes('insta')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/instagram.svg'
         alt='Instagram Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -89,11 +108,12 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('youtube')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/youtube.svg'
         alt='Youtube Icon'
         width={16}
         height={16}
+        unoptimized
         className={className}
         aria-hidden='true'
       />
@@ -102,11 +122,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('whatsapp')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/whatsapp.svg'
         alt='Whatsapp Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -115,11 +138,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('discord')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/discord.svg'
         alt='Discord Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -128,11 +154,14 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
 
   if (normalized.includes('gitlab')) {
     return (
-      <Image
+      <ExportedImage
         src='/images/icons/social/gitlab.svg'
         alt='Gitlab Icon'
         width={16}
         height={16}
+        priority={true}
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
