@@ -21,9 +21,10 @@ interface LngLayoutProps {
 export default async function LngLayout({ children, params }: LngLayoutProps) {
   const resolvedParams = await params;
   const lng = resolvedParams?.lng || null;
-  const { i18n } = await getT(lng);
+  const { t, i18n } = await getT(lng);
   const currentLang = i18n?.language || fallbackLng;
   const isRTL = ['fa', 'ar'].includes(currentLang);
+  const skipText = t('home.skip-to-content') as string;
 
   return (
     <div
@@ -34,6 +35,12 @@ export default async function LngLayout({ children, params }: LngLayoutProps) {
           : 'font-[var(--font-roboto),Times_New_Roman,sans-serif] [direction:ltr]'
       }
     >
+      <a
+        href='#main-content'
+        className='sr-only focus:not-sr-only focus:fixed focus:top-3 focus:inset-s-3 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-[#1e3a8a] focus:text-[#facc15] focus:rounded-lg focus:shadow-lg focus:font-bold focus:outline-2 focus:outline-offset-2 focus:outline-[#facc15] no-underline'
+      >
+        {skipText}
+      </a>
       <div className='bg-[#e8edfb] text-[#212529] min-h-screen print:min-h-0 print:h-[297mm] print:overflow-hidden'>
         {children}
       </div>

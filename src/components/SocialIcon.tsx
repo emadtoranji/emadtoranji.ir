@@ -17,7 +17,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Telegram Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -33,7 +32,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='LinkedIn Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -49,7 +47,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Github Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -65,7 +62,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='X/Twitter Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -81,7 +77,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='X/Twitter Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -97,7 +92,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Instagram Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -113,7 +107,8 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Youtube Icon'
         width={16}
         height={16}
-        unoptimized
+        fetchPriority='high'
+        preload={true}
         className={className}
         aria-hidden='true'
       />
@@ -127,7 +122,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Whatsapp Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -143,7 +137,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Discord Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
@@ -159,7 +152,6 @@ export const SocialIcon: React.FC<SocialIconProps> = ({ name, className = 'w-6 h
         alt='Gitlab Icon'
         width={16}
         height={16}
-        priority={true}
         fetchPriority='high'
         preload={true}
         className={className}
