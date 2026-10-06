@@ -142,9 +142,14 @@
         "description": "Telegram Mini App for cryptocurrency exchange with automated node integrations. Features 2FA user security, custodial wallet balance tracking, cryptocurrency conversion, and live market price feeds."
       },
       {
-        "title": "Corporate Website (Aratice)",
+        "title": "Multilingual Aviation Services Corporate Website (Aratice)",
         "url": "https://aratice.com",
-        "description": "Corporate website for service presentation and client engagement, engineered with SSR, strict SEO best practices, structured schemas, and fast response times."
+        "description": "Development of an international corporate website featuring bilingual architecture (Persian/English), modular component-based structure for presenting specialized aviation engineering and airport system services, optimized navigation, technical SEO meta-tag implementation, and dynamic inquiry forms with character counters and live validation."
+      },
+      {
+        "title": "Corporate Website & Industrial Services Portfolio (Homa Jonob)",
+        "url": "https://homajonob.ir",
+        "description": "Design and implementation of an official corporate website built for high performance and fast loading speeds, featuring a digital project and capability catalog, streamlined direct inquiry and consultation channels, and a fully responsive interface tailored for all screen resolutions."
       },
       {
         "title": "Project Listing & Ad Platform (Prajects)",
@@ -155,7 +160,7 @@
     "education-title": "Education",
     "education-items": [
       "Bachelor of Computer Engineering | Iranian EUniversity",
-      "Associate of Computer Engineering | Hormozgan University | 2020 – 2022"
+      "Associate of Computer Engineering | Hormozgan University"
     ],
     "language-switcher": {
       "switch-to-fa": "تغییر به زبان فارسی",
@@ -188,6 +193,6 @@
         "answer": "You can reach Emad Toranji via email at emadtoranji6@gmail.com, phone at +98-912-649-7501, or Telegram at @emadtoranji."
       }
     ],
-    "skip-to-content": "Skip to main content"
+    "skip-to-content": "Go to main content"
   }
 }
